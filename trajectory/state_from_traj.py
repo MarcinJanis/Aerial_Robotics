@@ -46,9 +46,7 @@ def state_from_output(m, J, g, input, dinput, d2input, d3input, d4input):
 
     q = R.from_matrix(rot_matrix).as_quat()
     
-    # POPRAWKA: Scipy domyślnie zwraca kwaternion w formacie (x, y, z, w).
-    # Zmieniamy kolejność na (w, x, y, z) aby dopasować się do weryfikacji w gt_state.
-    q = np.array([q[3], q[0], q[1], q[2]])
+    q = np.array([q[3], q[0], q[1], q[2]]) # Scipy use [x, y, z, w] -> val data use [w, x, y, z]
     
     # --- angular velocity ---
 
@@ -63,12 +61,9 @@ def state_from_output(m, J, g, input, dinput, d2input, d3input, d4input):
     # --- torque ---
     mt_scale = m/thrust
 
-    # POPRAWKA: Poprawne rzutowanie wektorów snap (d4x) i jerk (d3x) na osie body frame 
-    # zgodnie z równaniami różniczkowymi z uwzględnieniem obrotu.
     domega_x = -mt_scale * np.dot(d4x, yb) - 2 * mt_scale * np.dot(d3x, zb) * omega[0] + omega[1] * omega[2]
     domega_y = mt_scale * np.dot(d4x, xb) - 2 * mt_scale * np.dot(d3x, zb) * omega[1] - omega[0] * omega[2]
     
-    # POPRAWKA: Dodanie drugiego członu wynikającego z pochodnej osi zb dla z-towej składowej przyspieszenia kątowego.
     domega_z = d2psi * np.dot(zw, zb) + dpsi * np.dot(zw, np.cross(omega, zb))
 
     domega = np.array([domega_x, domega_y, domega_z])
@@ -79,7 +74,6 @@ def state_from_output(m, J, g, input, dinput, d2input, d3input, d4input):
 
     state = np.concatenate([x, q, dx, omega])
     
-    # POPRAWKA: Prawidłowe zagnieżdżenie skalara thrust w tablicę i użycie np.concatenate (zamiast concat dla kompatybilności).
     control_input = np.concatenate([np.array([thrust]), torque]) 
 
     return state, control_input
