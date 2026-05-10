@@ -1,0 +1,6 @@
+/MinSnapTraj:
+  ros__parameters:
+
+    dt: 0.01
+    waypoints_pth: '/home/developer/ros2_ws/src/trajectory/trajectory_examples/waypoints1.csv'
+    ROS2_topic_name_TrajectorySetpoint: '/crazyflie/Setpoints'
