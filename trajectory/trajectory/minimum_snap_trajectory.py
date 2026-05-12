@@ -74,7 +74,6 @@ class MinimumSnapTrajectory(Node):
             
         # --- sample trajectory ---
         
-
         p_x, v_x, a_x = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 0], local_t, global_t)
         p_y, v_y, a_y = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 1], local_t, global_t)
         p_z, v_z, a_z = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 2], local_t, global_t)
@@ -146,20 +145,17 @@ class MinimumSnapTrajectory(Node):
     
     
     def single_segment_constrain(self, p0, pk):
-        '''
-        Zamiast czasu `t` wplatamy stałą 1.0 (czas znormalizowany na koniec segmentu to s=1.0).
-        Dzięki temu unikamy gigantycznych potęg t^7, które wysadzają precyzję solwera!
-        '''
+   
         A_eq = np.zeros((8, 8))
         b_eq = np.zeros(8)
 
-        # --- Warunki początkowe (s = 0) ---
+        # --- initial state (s = 0) ---
         A_eq[0, :] = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # p(0) = p0
         A_eq[1, :] = [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # v(0) = 0
         A_eq[2, :] = [0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # a(0) = 0
         A_eq[3, :] = [0.0, 0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 0.0]  # j(0) = 0
 
-        # --- Warunki końcowe (s = 1.0) ---
+        # --- final state (s = 1.0) ---
         A_eq[4, :] = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]  # p(1) = pk
         A_eq[5, :] = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]  # v(1) = 0
         A_eq[6, :] = [0.0, 0.0, 2.0, 6.0, 12.0, 20.0, 30.0, 42.0]  # a(1) = 0
@@ -181,13 +177,13 @@ class MinimumSnapTrajectory(Node):
                 p0 = self.waypoints[n, axis]
                 pk = self.waypoints[n + 1, axis]
 
-                # Pobieramy równania (już bez czasu T, bo używamy czasu znormalizowanego)
+                # get constrain for equation (A_eq * c = b_eq)
                 A_eq, b_eq = self.single_segment_constrain(p0, pk)
                 
                 try:
                     c_opt = np.linalg.solve(A_eq, b_eq)
                 except np.linalg.LinAlgError:
-                    self.get_logger().error(f"[Trajectory Error] Osobliwa macierz w segmencie {n}")
+                    self.get_logger().error(f"[Trajectory Error] Cannot solve equation {n}")
                     c_opt = np.zeros(8)
                 
                 C_axis.append(c_opt)
