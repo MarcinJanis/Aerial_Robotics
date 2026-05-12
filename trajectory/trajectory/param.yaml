@@ -2,5 +2,6 @@
   ros__parameters:
 
     dt: 0.01
-    waypoints_pth: '/home/developer/ros2_ws/src/trajectory/trajectory_examples/waypoints1.csv'
+    desire_speed: 0.1
+    waypoints_pth: '/home/developer/ros2_ws/src/trajectory/trajectory_examples/waypoints2.csv'
     ROS2_topic_name_TrajectorySetpoint: '/crazyflie/Setpoints'

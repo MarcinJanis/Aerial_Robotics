@@ -1,4 +1,3 @@
-
 import rclpy
 from rclpy.node import Node
 
@@ -23,7 +22,7 @@ class MinimumSnapTrajectory(Node):
         self.declare_parameter('waypoints_pth', '/')
         self.waypoints_pth = self.get_parameter('waypoints_pth').value
        
-        df = pd.read_csv(self.waypoints_pth)
+        # df = pd.read_csv(self.waypoints_pth)
         # self.waypoints = df.to_numpy() 
         self.waypoints = np.loadtxt(self.waypoints_pth, delimiter=',', skiprows=1, dtype=float)
         
@@ -34,8 +33,7 @@ class MinimumSnapTrajectory(Node):
         self.declare_parameter('dt', 0.01)
         self.dt = self.get_parameter('dt').value
 
-        self.physics_timer = self.create_timer(self.dt, self.set_output)
-
+        
         # drone ThrustAndTorque publisher 
         self.declare_parameter('ROS2_topic_name_TrajectorySetpoint', '/crazyflie/Setpoints') 
         ROS2_topic_name_TrajectorySetpoint = self.get_parameter('ROS2_topic_name_TrajectorySetpoint').value
@@ -48,6 +46,9 @@ class MinimumSnapTrajectory(Node):
 
     
         self.last_known_yaw = 0.0
+
+        self.physics_timer = self.create_timer(self.dt, self.set_output)
+
 
 
     def set_output(self):
@@ -74,9 +75,9 @@ class MinimumSnapTrajectory(Node):
         # --- sample trajectory ---
         
 
-        p_x, v_x, a_x = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 0], local_t)
-        p_y, v_y, a_y = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 1], local_t)
-        p_z, v_z, a_z = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 2], local_t)
+        p_x, v_x, a_x = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 0], local_t, global_t)
+        p_y, v_y, a_y = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 1], local_t, global_t)
+        p_z, v_z, a_z = self.sample_trajectory(self.trajectory_coefficients[segment_idx, 2], local_t, global_t)
 
 
         # calculate yaw angle
@@ -91,6 +92,7 @@ class MinimumSnapTrajectory(Node):
 
         self.last_known_yaw = yaw
 
+        self.get_logger().info(f'local time: {local_t}, global_time{global_t}, setpoint: {p_x}, {p_y}, {p_z}')
         msg = TrajectorySetpoint()
 
         msg.x = [float(p_x), float(p_y), float(p_z)]
@@ -143,130 +145,77 @@ class MinimumSnapTrajectory(Node):
         return Q
     
     
-    def single_segment_constrain(self, t, p0, pk):
+    def single_segment_constrain(self, p0, pk):
         '''
-        Matrix equation: A_eq * c = b_eq
-
-        For 7th degree polynomial, we need 8 constrains as we are looking for 8 unknown variables. 
-        We define constrains as matrix equation:
-        A_eq * c = b_eq => c = A_eq * b_eq
-        A_eq is matrxi that defines coeefitiens, that after linear combination with c gives us equation, setting derivatives etc. 
-        b_eq is our constrians values.
-        It is needed to set manually cooefitiens to get n-th derivatives for t=0 or t=t_k. 
-
-        Warning: This function is used for single element in trajectory, between to points, and for single axis only!
-      
+        Zamiast czasu `t` wplatamy stałą 1.0 (czas znormalizowany na koniec segmentu to s=1.0).
+        Dzięki temu unikamy gigantycznych potęg t^7, które wysadzają precyzję solwera!
         '''
-
-
         A_eq = np.zeros((8, 8))
         b_eq = np.zeros(8)
 
-        # --- set initial position (t=0) ---
-        A_eq[0, :] = np.array([1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) 
+        # --- Warunki początkowe (s = 0) ---
+        A_eq[0, :] = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # p(0) = p0
+        A_eq[1, :] = [0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # v(0) = 0
+        A_eq[2, :] = [0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # a(0) = 0
+        A_eq[3, :] = [0.0, 0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 0.0]  # j(0) = 0
+
+        # --- Warunki końcowe (s = 1.0) ---
+        A_eq[4, :] = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]  # p(1) = pk
+        A_eq[5, :] = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]  # v(1) = 0
+        A_eq[6, :] = [0.0, 0.0, 2.0, 6.0, 12.0, 20.0, 30.0, 42.0]  # a(1) = 0
+        A_eq[7, :] = [0.0, 0.0, 0.0, 6.0, 24.0, 60.0, 120.0, 210.0] # j(1) = 0
+
         b_eq[0] = p0
-
-        # --- set initial velocity (t=0) ---
-        A_eq[1, :] = np.array([0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) 
-        b_eq[1] = 0.0
-
-        # --- set initial acceleration (t=0) ---
-        A_eq[2, :] = np.array([0.0, 0.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0]) 
-        b_eq[2] = 0.0
-
-        # --- set initial jerk (t=0) -> 3rd derivative is 6*c3 ---
-        A_eq[3, :] = np.array([0.0, 0.0, 0.0, 6.0, 0.0, 0.0, 0.0, 0.0]) 
-        b_eq[3] = 0.0
-
-        # --- set final position (t=T) ---
-        A_eq[4, :] = np.array([1.0, t, t**2, t**3, t**4, t**5, t**6, t**7]) 
         b_eq[4] = pk
 
-        # --- set final velocity (t=T) ---
-        A_eq[5, :] = np.array([0.0, 1.0, 2*t, 3*t**2, 4*t**3, 5*t**4, 6*t**5, 7*t**6]) 
-        b_eq[5] = 0.0
-
-        # --- set final acceleration (t=T) ---
-        A_eq[6, :] = np.array([0.0, 0.0, 2.0, 6*t, 12*t**2, 20*t**3, 30*t**4, 42*t**5]) 
-        b_eq[6] = 0.0
-
-        # --- set final jerk (t=T) ---
-        A_eq[7, :] = np.array([0.0, 0.0, 0.0, 6.0, 24*t, 60*t**2, 120*t**3, 210*t**4]) 
-        b_eq[7] = 0.0
-
         return A_eq, b_eq
-
     
     def find_trajectory(self):
-
         C = []
-        
-        time_vect = self.allocate_time(speed = self.speed)
-    
+        time_vect = self.allocate_time(speed=self.speed)
         segments_n = time_vect.shape[0] 
 
         for n in range(segments_n):
-            
-            
-            t = time_vect[n]
-            Q = self.compute_Q_matrix(t)
-            
             C_axis = []
             for axis in range(3):
                 p0 = self.waypoints[n, axis]
                 pk = self.waypoints[n + 1, axis]
 
-                A_eq, b_eq = self.single_segment_constrain(t, p0, pk)
+                # Pobieramy równania (już bez czasu T, bo używamy czasu znormalizowanego)
+                A_eq, b_eq = self.single_segment_constrain(p0, pk)
                 
-                constraints = {'type': 'eq', 'fun': lambda c: np.dot(A_eq, c) - b_eq}
-                c0 = np.zeros(Q.shape[0])
+                try:
+                    c_opt = np.linalg.solve(A_eq, b_eq)
+                except np.linalg.LinAlgError:
+                    self.get_logger().error(f"[Trajectory Error] Osobliwa macierz w segmencie {n}")
+                    c_opt = np.zeros(8)
                 
-                def cost_function(c):
-                    return np.dot(c.T, np.dot(Q, c))
-                
-                # Run solver
-                result = minimize(cost_function, c0, method='SLSQP', constraints=constraints)
-                
-                C_axis.append(result.x)
-
+                C_axis.append(c_opt)
             C.append(C_axis)
-
         
-        C_np = np.array(C) # shape (segments_n, axis, coeeficient) (n, 3, 8)
+        C_np = np.array(C)
         global_time_vect = np.cumsum(time_vect)
-
         return C_np, global_time_vect, time_vect
 
 
     
-    def sample_trajectory(self, c, t):
+    def sample_trajectory(self, c, local_t, T):
+        # Zabezpieczenie przed podaniem T=0 (jeśli wygenerowano zerowy odcinek czasu)
+        if T < 1e-4:
+            return c[0], 0.0, 0.0
+
+        s = local_t / T  # Czas znormalizowany od 0 do 1
         
-        # 1. position
-        p = (c[0] + 
-             c[1] * t + 
-             c[2] * t**2 + 
-             c[3] * t**3 + 
-             c[4] * t**4 + 
-             c[5] * t**5 + 
-             c[6] * t**6 + 
-             c[7] * t**7)
+        # 1. Pozycja
+        p = c[0] + c[1]*s + c[2]*s**2 + c[3]*s**3 + c[4]*s**4 + c[5]*s**5 + c[6]*s**6 + c[7]*s**7
         
-        # 2. velocity - 1st derivative
-        v = (c[1] + 
-             2 * c[2] * t + 
-             3 * c[3] * t**2 + 
-             4 * c[4] * t**3 + 
-             5 * c[5] * t**4 + 
-             6 * c[6] * t**5 + 
-             7 * c[7] * t**6)
+        # 2. Prędkość - wyliczona ze znormalizowanego czasu, podzielona przez T!
+        v_s = c[1] + 2*c[2]*s + 3*c[3]*s**2 + 4*c[4]*s**3 + 5*c[5]*s**4 + 6*c[6]*s**5 + 7*c[7]*s**6
+        v = v_s / T
         
-        # 3. Acceleration - 2nd derivative
-        a = (2 * c[2] + 
-             6 * c[3] * t + 
-             12 * c[4] * t**2 + 
-             20 * c[5] * t**3 + 
-             30 * c[6] * t**4 + 
-             42 * c[7] * t**5)
+        # 3. Przyspieszenie - podzielone przez T^2
+        a_s = 2*c[2] + 6*c[3]*s + 12*c[4]*s**2 + 20*c[5]*s**3 + 30*c[6]*s**4 + 42*c[7]*s**5
+        a = a_s / (T**2)
 
         return p, v, a
     

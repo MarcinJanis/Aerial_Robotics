@@ -1,19 +1,19 @@
 /LeeController:
   ros__parameters:
     
-    kx: 1.0
-    kv: 1.0
-    kR: 1.0
-    kw: 1.0
-
+    kx: 0.22
+    kv: 0.15
+    kR: 0.0037
+    kw: 0.00045
+    
     m: 0.025
-    J: [16.571710e-06, 0.830806e-06, 0.718277e-06, 
-        0.0, 16.655602e-06, 1.800197e-06, 
+    J: [16.571710e-06, 0.0, 0.0, 
+        0.0, 16.655602e-06, 0.0, 
         0.0, 0.0, 29.261652e-06]
     
     dt: 0.01
 
 
-    ROS2_topic_name_state: '/crazyflie/Odometry'
+    ROS2_topic_name_state: '/crazyflie/ActualState'
     ROS2_topic_name_setpoint: '/crazyflie/Setpoints'
     ROS2_topic_name_ThrustAndTorque: '/cf_control/control_command'

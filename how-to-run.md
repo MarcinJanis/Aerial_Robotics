@@ -13,3 +13,7 @@ ros2 run trajectory trajectory_generator --ros-args --params-file /home/develope
 ```bash
 ros2 launch ros_gz_crazyflie_bringup crazyflie_simulation.launch.py
 ```
+
+```bash
+ros2 run cf_control mixer
+```

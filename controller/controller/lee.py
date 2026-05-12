@@ -27,8 +27,8 @@ class lee_controller(Node):
         self.kw = self.get_parameter('kw').value
 
         # --- physical parameter ---
-        self.g = np.array([0.0, 0.0, -9.81])
-        # self.g = 9.81
+        self.g_vect = np.array([0.0, 0.0, -9.81])
+        self.g = 9.81
 
         # --- drone parameters ---
         self.declare_parameter('m', 1.0)  # [kg]
@@ -100,20 +100,29 @@ class lee_controller(Node):
         ax_z_g = np.array([0, 0, 1])  # z axis in global ref frame
 
         # === error: position and linear velocity ===
+        self.get_logger().info(f'[debug] x: act = {x}, sp = {self.x_sp}')
         ex = x - self.x_sp  # position error [3,]
-        ev = v - self.v_sp  # velocity error [3, ]
+        ev = v - self.v_sp  # velocity error [3,]
 
+        # === Target thrust - global body frame === 
+        
+
+        T_target = (
+            -self.kx * ex - self.kv * ev + ax_z_g * self.m * self.g + self.m * self.a_sp
+        )  # desire thrust vector
+        
+        if T_target[2] < 0.01:
+            T_target[2] = 0.01
         # === compose target rotation matrix ===
 
         # z axis of body frame in global reference frame
-        T_target = (
-            -self.kx * ex - self.kv * ev - ax_z_g * self.m * self.g + self.m * self.a_sp
-        )  # desire thrust vector
+        
         if np.linalg.norm(T_target) > 1e-4:
             b3 = T_target / np.linalg.norm(T_target)  # z axis of body frame
         else:
             b3 = ax_z_g  
 
+        self.get_logger().info(f'[debug] ex = {ex}, ev = {ev}, T_target = {T_target}, b3: {b3}')
         # x axis of body frame in global reference frame - set by yaw setpoint
         b1 = np.array([np.cos(self.y_sp), np.sin(self.y_sp), 0])  # x axis of body frame
 
@@ -124,7 +133,7 @@ class lee_controller(Node):
         # correction for b1 axis - make sure, that b1 is perpendicular to b2 and b3
         b1 = np.cross(b2, b3)  # ???
 
-        # compose
+        # compose axis into rotation matrix
         R_target_matrix = np.column_stack((b1, b2, b3))
         R_target = r.from_matrix(R_target_matrix)
 
@@ -200,6 +209,8 @@ class lee_controller(Node):
             msg.torque.y = float(torque[1])
             msg.torque.z = float(torque[2])
             self.publisher.publish(msg)
+
+            # self.get_logger().info(f'Thrust: {float(thrust):.4}, Torque: [{torque[0]:.4}, {torque[1]:.4}, {torque[2]:.4}]')
         
 
 def vee_map(x):

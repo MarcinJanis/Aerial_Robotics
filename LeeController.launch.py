@@ -7,18 +7,16 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
 
+    # --- simulation --- 
     # force_headless = SetEnvironmentVariable('QT_QPA_PLATFORM', 'offscreen')
 
-    # # Import Simulation launch 
+   
     # crazyflie_bringup_dir = get_package_share_directory('ros_gz_crazyflie_bringup')
     
     # crazyflie_sim_launch = IncludeLaunchDescription(
     #     PythonLaunchDescriptionSource(
     #         os.path.join(crazyflie_bringup_dir, 'launch', 'crazyflie_simulation.launch.py')
-    #     ),
-    #     launch_arguments={
-    #         'gz_args': '-r -s',  
-    #     }.items()
+    #     )
     # )
 
     # Node - Controller 
@@ -49,8 +47,25 @@ def generate_launch_description():
         output='screen'
     )
 
+    # Bridge between gazebo and ros2
+    bridge_node = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        name='ros_gz_bridge',
+        arguments=[
+            # <Nazwa_Topiku_W_Gazebo>@<Typ_ROS>[<Typ_Gazebo>
+            # [ - direction -> 
+            '/model/crazyflie/odometry@nav_msgs/msg/Odometry[gz.msgs.Odometry'
+        ],
+        remappings=[
+            ('/model/crazyflie/odometry', '/crazyflie/ActualState')
+        ],
+        output='screen'
+    )
+
     return LaunchDescription([
         # crazyflie_sim_launch,
+        bridge_node,
         lee_controller_node,
         trajectory_node,
         mixer_node
