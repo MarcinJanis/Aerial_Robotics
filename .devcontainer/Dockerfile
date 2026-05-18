@@ -167,3 +167,4 @@ RUN echo "export LANG=en_US.UTF-8" >> /home/developer/.bashrc \
     && echo 'export PATH="$HOME/.local/bin:$PATH"' >> /home/developer/.bashrc
 
 CMD [ "sleep", "infinity" ]
+

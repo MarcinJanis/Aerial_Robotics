@@ -10,7 +10,7 @@
   <depend>rclpy</depend>
   <depend>cf_control_msgs</depend>
   <depend>drone_model_msgs</depend>
-  <depend>geometry_msgss</depend>
+  <depend>geometry_msgs</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

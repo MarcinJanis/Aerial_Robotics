@@ -20,7 +20,8 @@
         "--inline-quotes",
         "single",
         "--extend-ignore",
-        "E203"
+        "E203",
+        "--ignore=E501,W291,D100,D101,D102,D103"
     ],
     "flake8.enabled": true,
     "ruff.configuration": {
@@ -31,3 +32,5 @@
     "ruff.lineLength": 99,
     "terminal.integrated.suggest.enabled": false
 }
+
+
