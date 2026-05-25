@@ -46,6 +46,11 @@ class lee_controller(Node):
         self.act_rotation_q[-1] = 1.0
         self.act_angular_vel = np.zeros((3,))
 
+        self.prev_time_stamp = 0.0 # prev msg time stamp to derivative of position
+        self.vel_lp_filter = 0.2
+        self.prev_time_stamp = 0.0
+        self.prev_pose = act_translation
+        
         # === trajectory state (Polynomials) ===
         self.poly_x = np.zeros(8)
         self.poly_y = np.zeros(8)
@@ -228,11 +233,22 @@ class lee_controller(Node):
             # orientation 
             quat = msg.pose.pose.orientation
             self.act_rotation_q = np.array([quat.x, quat.y, quat.z, quat.w])
+            R_actual = r.from_quat(self.act_rotation_q)
             
             # velocity -> transform from body to global frame
+            #--- velocity - ver 1: from Gazebo
             vel_body = np.array([msg.twist.twist.linear.x, msg.twist.twist.linear.y, msg.twist.twist.linear.z])
-            R_actual = r.from_quat(self.act_rotation_q)
             self.act_linear_vel = R_actual.apply(vel_body) 
+            #--- velocity - ver 2: based on pose
+            act_time_stamp = msg.pose.timestamp # check !!!
+            d_pose = (self.prev_pose - self.act_translation) - np.max(act_time_stamp - self.prev_time_stamp, 1e-4)
+            d_pose_filtered = d_pose - self.vel_lp_filter * self.act_linear_vel # self.act_linear_vel used as prev 
+            
+            self.act_linear_vel = d_pose_filtered
+            self.prev_time_stamp = act_time_stamp
+            self.prev_pose = self.act_translation
+            
+            #---
             
             # angular velocity 
             ang_vel = msg.twist.twist.angular
