@@ -1,0 +1,976 @@
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.057, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=0.080, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.161, Zad=0.200 | Prędkość: Akt=0.006, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2570 N
+[INFO] [1779180686.938104731] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.005, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.119, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.161, Zad=0.200 | Prędkość: Akt=0.020, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2414 N
+[INFO] [1779180686.943716923] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.005, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.119, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.161, Zad=0.200 | Prędkość: Akt=0.020, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2414 N
+[INFO] [1779180686.958209011] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.005, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.119, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.161, Zad=0.200 | Prędkość: Akt=0.020, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2414 N
+[INFO] [1779180686.961506448] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.005, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.119, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.161, Zad=0.200 | Prędkość: Akt=0.020, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2414 N
+[INFO] [1779180686.992904468] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.005, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.119, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.161, Zad=0.200 | Prędkość: Akt=0.020, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2414 N
+[INFO] [1779180686.998773967] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.005, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.119, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.161, Zad=0.200 | Prędkość: Akt=0.020, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2414 N
+[INFO] [1779180687.018022451] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=-0.052, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.000, Zad=0.000 | Prędkość: Akt=0.148, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.028, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2311 N
+[INFO] [1779180687.027944990] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=-0.052, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.000, Zad=0.000 | Prędkość: Akt=0.148, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.028, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2311 N
+[INFO] [1779180687.046316377] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=-0.052, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.000, Zad=0.000 | Prędkość: Akt=0.148, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.028, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2311 N
+[INFO] [1779180687.053273559] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=-0.052, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.000, Zad=0.000 | Prędkość: Akt=0.148, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.028, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2311 N
+[INFO] [1779180687.066468276] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=-0.052, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.000, Zad=0.000 | Prędkość: Akt=0.148, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.028, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2311 N
+[INFO] [1779180687.089054778] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.007, Zad=0.000 | Prędkość: Akt=-0.112, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.164, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.022, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2322 N
+[INFO] [1779180687.106393627] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.007, Zad=0.000 | Prędkość: Akt=-0.112, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.164, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.022, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2322 N
+[INFO] [1779180687.110049290] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.007, Zad=0.000 | Prędkość: Akt=-0.112, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.164, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.022, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2322 N
+[INFO] [1779180687.126123684] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.007, Zad=0.000 | Prędkość: Akt=-0.112, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.164, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.160, Zad=0.200 | Prędkość: Akt=0.022, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2322 N
+[INFO] [1779180687.130927573] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=-0.167, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=0.161, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.158, Zad=0.200 | Prędkość: Akt=0.001, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2474 N
+[INFO] [1779180687.146515215] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=-0.167, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=0.161, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.158, Zad=0.200 | Prędkość: Akt=0.001, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2474 N
+[INFO] [1779180687.150340368] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=-0.167, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=0.161, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.158, Zad=0.200 | Prędkość: Akt=0.001, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2474 N
+[INFO] [1779180687.165865272] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=-0.167, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=0.161, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.158, Zad=0.200 | Prędkość: Akt=0.001, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2474 N
+[INFO] [1779180687.172778139] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.205, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.008, Zad=0.000 | Prędkość: Akt=0.135, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.157, Zad=0.200 | Prędkość: Akt=-0.031, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2735 N
+[INFO] [1779180687.186958506] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.205, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.008, Zad=0.000 | Prędkość: Akt=0.135, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.157, Zad=0.200 | Prędkość: Akt=-0.031, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2735 N
+[INFO] [1779180687.191508731] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.205, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.008, Zad=0.000 | Prędkość: Akt=0.135, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.157, Zad=0.200 | Prędkość: Akt=-0.031, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2735 N
+[INFO] [1779180687.223404261] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.005, Zad=0.000 | Prędkość: Akt=-0.222, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=0.093, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.155, Zad=0.200 | Prędkość: Akt=-0.068, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3031 N
+[INFO] [1779180687.230635185] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.005, Zad=0.000 | Prędkość: Akt=-0.222, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=0.093, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.155, Zad=0.200 | Prędkość: Akt=-0.068, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3031 N
+[INFO] [1779180687.240234302] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.005, Zad=0.000 | Prędkość: Akt=-0.222, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=0.093, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.155, Zad=0.200 | Prędkość: Akt=-0.068, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3031 N
+[INFO] [1779180687.253640464] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.005, Zad=0.000 | Prędkość: Akt=-0.222, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=0.093, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.155, Zad=0.200 | Prędkość: Akt=-0.068, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3031 N
+[INFO] [1779180687.260368184] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.210, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.039, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.154, Zad=0.200 | Prędkość: Akt=-0.091, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3215 N
+[INFO] [1779180687.266564050] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.210, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.039, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.154, Zad=0.200 | Prędkość: Akt=-0.091, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3215 N
+[INFO] [1779180687.283326010] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.210, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.039, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.154, Zad=0.200 | Prędkość: Akt=-0.091, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3215 N
+[INFO] [1779180687.293269752] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.210, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.039, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.154, Zad=0.200 | Prędkość: Akt=-0.091, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3215 N
+[INFO] [1779180687.297861258] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.210, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.039, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.154, Zad=0.200 | Prędkość: Akt=-0.091, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3215 N
+[INFO] [1779180687.310751987] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.210, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.039, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.154, Zad=0.200 | Prędkość: Akt=-0.091, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3215 N
+[INFO] [1779180687.325181313] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.014, Zad=0.000 | Prędkość: Akt=-0.169, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=-0.018, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.152, Zad=0.200 | Prędkość: Akt=-0.088, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3176 N
+[INFO] [1779180687.348748945] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.014, Zad=0.000 | Prędkość: Akt=-0.169, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.009, Zad=0.000 | Prędkość: Akt=-0.018, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.152, Zad=0.200 | Prędkość: Akt=-0.088, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3176 N
+[INFO] [1779180687.359067760] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.016, Zad=0.000 | Prędkość: Akt=-0.113, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.008, Zad=0.000 | Prędkość: Akt=-0.069, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.062, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2941 N
+[INFO] [1779180687.366684975] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.016, Zad=0.000 | Prędkość: Akt=-0.113, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.008, Zad=0.000 | Prędkość: Akt=-0.069, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.062, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2941 N
+[INFO] [1779180687.377362637] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.017, Zad=0.000 | Prędkość: Akt=-0.050, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=-0.109, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.021, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2596 N
+[INFO] [1779180687.398899447] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.017, Zad=0.000 | Prędkość: Akt=-0.050, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=-0.109, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.021, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2596 N
+[INFO] [1779180687.407679610] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.017, Zad=0.000 | Prędkość: Akt=-0.050, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=-0.109, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.021, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2596 N
+[INFO] [1779180687.423496049] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.017, Zad=0.000 | Prędkość: Akt=-0.050, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=-0.109, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.021, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2596 N
+[INFO] [1779180687.426720947] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.017, Zad=0.000 | Prędkość: Akt=-0.050, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=-0.109, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.021, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2596 N
+[INFO] [1779180687.440676470] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.017, Zad=0.000 | Prędkość: Akt=-0.050, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=-0.109, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.021, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2596 N
+[INFO] [1779180687.457780393] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.017, Zad=0.000 | Prędkość: Akt=-0.050, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=-0.109, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.021, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2596 N
+[INFO] [1779180687.464882921] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.017, Zad=0.000 | Prędkość: Akt=-0.050, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.006, Zad=0.000 | Prędkość: Akt=-0.109, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.151, Zad=0.200 | Prędkość: Akt=-0.021, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2596 N
+[INFO] [1779180687.469383080] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.016, Zad=0.000 | Prędkość: Akt=0.020, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=-0.140, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.150, Zad=0.200 | Prędkość: Akt=0.023, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2236 N
+[INFO] [1779180687.486170354] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.016, Zad=0.000 | Prędkość: Akt=0.020, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=-0.140, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.150, Zad=0.200 | Prędkość: Akt=0.023, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2236 N
+[INFO] [1779180687.544742245] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.016, Zad=0.000 | Prędkość: Akt=0.020, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=-0.140, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.150, Zad=0.200 | Prędkość: Akt=0.023, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2236 N
+[INFO] [1779180687.555311142] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.014, Zad=0.000 | Prędkość: Akt=0.102, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.164, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.149, Zad=0.200 | Prędkość: Akt=0.052, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1962 N
+[INFO] [1779180687.562760633] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.014, Zad=0.000 | Prędkość: Akt=0.102, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.164, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.149, Zad=0.200 | Prędkość: Akt=0.052, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1962 N
+[INFO] [1779180687.573227839] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.014, Zad=0.000 | Prędkość: Akt=0.102, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.164, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.149, Zad=0.200 | Prędkość: Akt=0.052, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1962 N
+[INFO] [1779180687.591530798] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.009, Zad=0.000 | Prędkość: Akt=0.189, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.182, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.147, Zad=0.200 | Prędkość: Akt=0.056, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1870 N
+[INFO] [1779180687.604197528] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.009, Zad=0.000 | Prędkość: Akt=0.189, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.182, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.147, Zad=0.200 | Prędkość: Akt=0.056, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1870 N
+[INFO] [1779180687.610901520] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.009, Zad=0.000 | Prędkość: Akt=0.189, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.182, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.147, Zad=0.200 | Prędkość: Akt=0.056, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1870 N
+[INFO] [1779180687.634008245] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=0.268, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.003, Zad=0.000 | Prędkość: Akt=-0.191, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.145, Zad=0.200 | Prędkość: Akt=0.029, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2071 N
+[INFO] [1779180687.637480443] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=0.268, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.003, Zad=0.000 | Prędkość: Akt=-0.191, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.145, Zad=0.200 | Prędkość: Akt=0.029, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2071 N
+[INFO] [1779180687.691484950] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.322, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.188, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.142, Zad=0.200 | Prędkość: Akt=-0.035, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2625 N
+[INFO] [1779180687.702923248] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.322, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.188, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.142, Zad=0.200 | Prędkość: Akt=-0.035, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2625 N
+[INFO] [1779180687.709155697] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.322, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.188, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.142, Zad=0.200 | Prędkość: Akt=-0.035, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2625 N
+[INFO] [1779180687.731428876] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.322, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.188, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.142, Zad=0.200 | Prędkość: Akt=-0.035, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2625 N
+[INFO] [1779180687.747052996] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.330, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.162, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.139, Zad=0.200 | Prędkość: Akt=-0.120, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3383 N
+[INFO] [1779180687.753479685] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.330, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.162, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.139, Zad=0.200 | Prędkość: Akt=-0.120, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3383 N
+[INFO] [1779180687.757257940] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.010, Zad=0.000 | Prędkość: Akt=0.330, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.162, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.139, Zad=0.200 | Prędkość: Akt=-0.120, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3383 N
+[INFO] [1779180687.770337723] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=0.274, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.113, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.136, Zad=0.200 | Prędkość: Akt=-0.175, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3852 N
+[INFO] [1779180687.793899103] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=0.274, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.113, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.136, Zad=0.200 | Prędkość: Akt=-0.175, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3852 N
+[INFO] [1779180687.809693800] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=0.274, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.113, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.136, Zad=0.200 | Prędkość: Akt=-0.175, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3852 N
+[INFO] [1779180687.847092270] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=0.274, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.004, Zad=0.000 | Prędkość: Akt=-0.113, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.136, Zad=0.200 | Prędkość: Akt=-0.175, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3852 N
+[INFO] [1779180687.857015354] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.025, Zad=0.000 | Prędkość: Akt=0.095, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.003, Zad=0.000 | Prędkość: Akt=-0.003, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.132, Zad=0.200 | Prędkość: Akt=-0.133, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3224 N
+[INFO] [1779180687.872539211] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.025, Zad=0.000 | Prędkość: Akt=0.095, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.003, Zad=0.000 | Prędkość: Akt=-0.003, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.132, Zad=0.200 | Prędkość: Akt=-0.133, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3224 N
+[INFO] [1779180687.887980641] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.026, Zad=0.000 | Prędkość: Akt=0.022, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.042, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.132, Zad=0.200 | Prędkość: Akt=-0.049, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2498 N
+[INFO] [1779180687.897816155] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.026, Zad=0.000 | Prędkość: Akt=0.022, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.042, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.132, Zad=0.200 | Prędkość: Akt=-0.049, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2498 N
+[INFO] [1779180687.917520348] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.026, Zad=0.000 | Prędkość: Akt=0.022, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.042, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.132, Zad=0.200 | Prędkość: Akt=-0.049, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2498 N
+[INFO] [1779180687.920968335] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.026, Zad=0.000 | Prędkość: Akt=0.022, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.042, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.132, Zad=0.200 | Prędkość: Akt=-0.049, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2498 N
+[INFO] [1779180687.936746928] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.026, Zad=0.000 | Prędkość: Akt=0.022, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.042, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.132, Zad=0.200 | Prędkość: Akt=-0.049, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2498 N
+[INFO] [1779180687.971732872] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.026, Zad=0.000 | Prędkość: Akt=0.022, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.042, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.132, Zad=0.200 | Prędkość: Akt=-0.049, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2498 N
+[INFO] [1779180687.976231884] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.025, Zad=0.000 | Prędkość: Akt=-0.051, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.084, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.131, Zad=0.200 | Prędkość: Akt=0.044, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1777 N
+[INFO] [1779180687.993820401] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.022, Zad=0.000 | Prędkość: Akt=-0.147, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.129, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.129, Zad=0.200 | Prędkość: Akt=0.116, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1167 N
+[INFO] [1779180688.010724389] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.022, Zad=0.000 | Prędkość: Akt=-0.147, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.129, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.129, Zad=0.200 | Prędkość: Akt=0.116, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1167 N
+[INFO] [1779180688.022828311] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.022, Zad=0.000 | Prędkość: Akt=-0.147, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.129, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.129, Zad=0.200 | Prędkość: Akt=0.116, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1167 N
+[INFO] [1779180688.036264627] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=-0.259, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.177, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.127, Zad=0.200 | Prędkość: Akt=0.159, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0745 N
+[INFO] [1779180688.061346670] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=-0.259, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.177, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.127, Zad=0.200 | Prędkość: Akt=0.159, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0745 N
+[INFO] [1779180688.073490002] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=-0.259, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.177, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.127, Zad=0.200 | Prędkość: Akt=0.159, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0745 N
+[INFO] [1779180688.077574994] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=-0.259, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.177, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.127, Zad=0.200 | Prędkość: Akt=0.159, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0745 N
+[INFO] [1779180688.094684374] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=-0.259, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.177, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.127, Zad=0.200 | Prędkość: Akt=0.159, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0745 N
+[INFO] [1779180688.099587435] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=-0.259, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.177, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.127, Zad=0.200 | Prędkość: Akt=0.159, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0745 N
+[INFO] [1779180688.112644651] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=-0.259, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.177, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.127, Zad=0.200 | Prędkość: Akt=0.159, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0745 N
+[INFO] [1779180688.117021328] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.016, Zad=0.000 | Prędkość: Akt=-0.259, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.177, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.127, Zad=0.200 | Prędkość: Akt=0.159, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0745 N
+[INFO] [1779180688.127801132] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.008, Zad=0.000 | Prędkość: Akt=-0.380, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.226, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.122, Zad=0.200 | Prędkość: Akt=0.135, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0691 N
+[INFO] [1779180688.154824327] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.008, Zad=0.000 | Prędkość: Akt=-0.380, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=0.226, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.122, Zad=0.200 | Prędkość: Akt=0.135, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.0691 N
+[INFO] [1779180688.158941292] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.479, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.270, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.116, Zad=0.200 | Prędkość: Akt=0.025, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1273 N
+[INFO] [1779180688.172589974] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.479, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.270, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.116, Zad=0.200 | Prędkość: Akt=0.025, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1273 N
+[INFO] [1779180688.176590292] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.479, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.270, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.116, Zad=0.200 | Prędkość: Akt=0.025, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1273 N
+[INFO] [1779180688.188809682] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.479, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.270, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.116, Zad=0.200 | Prędkość: Akt=0.025, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1273 N
+[INFO] [1779180688.196524888] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.479, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.270, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.116, Zad=0.200 | Prędkość: Akt=0.025, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1273 N
+[INFO] [1779180688.209139439] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.479, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.270, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.116, Zad=0.200 | Prędkość: Akt=0.025, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1273 N
+[INFO] [1779180688.219843647] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.479, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.270, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.116, Zad=0.200 | Prędkość: Akt=0.025, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1273 N
+[INFO] [1779180688.231981115] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.516, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.289, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.108, Zad=0.200 | Prędkość: Akt=-0.153, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2593 N
+[INFO] [1779180688.238312091] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.516, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.289, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.108, Zad=0.200 | Prędkość: Akt=-0.153, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2593 N
+[INFO] [1779180688.250878046] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.516, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.289, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.108, Zad=0.200 | Prędkość: Akt=-0.153, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2593 N
+[INFO] [1779180688.266754047] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.516, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.289, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.108, Zad=0.200 | Prędkość: Akt=-0.153, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2593 N
+[INFO] [1779180688.302616728] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.010, Zad=0.000 | Prędkość: Akt=-0.516, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.289, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.108, Zad=0.200 | Prędkość: Akt=-0.153, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2593 N
+[INFO] [1779180688.313634571] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.019, Zad=0.000 | Prędkość: Akt=-0.447, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.264, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.100, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.329097837] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.027, Zad=0.000 | Prędkość: Akt=-0.289, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.196, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.091, Zad=0.200 | Prędkość: Akt=-0.456, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.354592962] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.027, Zad=0.000 | Prędkość: Akt=-0.289, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.196, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.091, Zad=0.200 | Prędkość: Akt=-0.456, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.369785423] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.027, Zad=0.000 | Prędkość: Akt=-0.289, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.196, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.091, Zad=0.200 | Prędkość: Akt=-0.456, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.390643830] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.033, Zad=0.000 | Prędkość: Akt=-0.125, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.120, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.083, Zad=0.200 | Prędkość: Akt=-0.481, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.396453066] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.033, Zad=0.000 | Prędkość: Akt=-0.125, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.120, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.083, Zad=0.200 | Prędkość: Akt=-0.481, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.410084951] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.033, Zad=0.000 | Prędkość: Akt=-0.125, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.120, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.083, Zad=0.200 | Prędkość: Akt=-0.481, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.417177045] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.033, Zad=0.000 | Prędkość: Akt=-0.125, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.002, Zad=0.000 | Prędkość: Akt=0.120, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.083, Zad=0.200 | Prędkość: Akt=-0.481, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.435876857] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.038, Zad=0.000 | Prędkość: Akt=-0.004, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.050, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.075, Zad=0.200 | Prędkość: Akt=-0.435, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.442175471] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.038, Zad=0.000 | Prędkość: Akt=-0.004, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.050, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.075, Zad=0.200 | Prędkość: Akt=-0.435, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.467895466] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.038, Zad=0.000 | Prędkość: Akt=-0.004, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.050, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.075, Zad=0.200 | Prędkość: Akt=-0.435, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.484699029] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.042, Zad=0.000 | Prędkość: Akt=0.082, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.010, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.069, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3524 N
+[INFO] [1779180688.488400883] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.042, Zad=0.000 | Prędkość: Akt=0.082, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.010, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.069, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3524 N
+[INFO] [1779180688.500637943] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.042, Zad=0.000 | Prędkość: Akt=0.082, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.010, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.069, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3524 N
+[INFO] [1779180688.511169247] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.042, Zad=0.000 | Prędkość: Akt=0.082, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.010, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.069, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3524 N
+[INFO] [1779180688.516545447] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.042, Zad=0.000 | Prędkość: Akt=0.082, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.010, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.069, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3524 N
+[INFO] [1779180688.531569534] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.042, Zad=0.000 | Prędkość: Akt=0.082, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.010, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.069, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3524 N
+[INFO] [1779180688.545256388] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.042, Zad=0.000 | Prędkość: Akt=0.082, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.010, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.069, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3524 N
+[INFO] [1779180688.564951225] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.042, Zad=0.000 | Prędkość: Akt=0.082, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.010, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.069, Zad=0.200 | Prędkość: Akt=-0.346, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3524 N
+[INFO] [1779180688.573498450] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.044, Zad=0.000 | Prędkość: Akt=0.148, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.057, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.063, Zad=0.200 | Prędkość: Akt=-0.237, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2632 N
+[INFO] [1779180688.577247223] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.044, Zad=0.000 | Prędkość: Akt=0.148, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.057, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.063, Zad=0.200 | Prędkość: Akt=-0.237, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2632 N
+[INFO] [1779180688.589563027] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.044, Zad=0.000 | Prędkość: Akt=0.205, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.098, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.058, Zad=0.200 | Prędkość: Akt=-0.129, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1941 N
+[INFO] [1779180688.597039975] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.044, Zad=0.000 | Prędkość: Akt=0.205, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.098, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.058, Zad=0.200 | Prędkość: Akt=-0.129, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1941 N
+[INFO] [1779180688.619228083] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.044, Zad=0.000 | Prędkość: Akt=0.205, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.098, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.058, Zad=0.200 | Prędkość: Akt=-0.129, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1941 N
+[INFO] [1779180688.636433789] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.044, Zad=0.000 | Prędkość: Akt=0.205, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.098, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.058, Zad=0.200 | Prędkość: Akt=-0.129, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1941 N
+[INFO] [1779180688.641501541] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.044, Zad=0.000 | Prędkość: Akt=0.205, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=-0.000, Zad=0.000 | Prędkość: Akt=-0.098, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.058, Zad=0.200 | Prędkość: Akt=-0.129, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1941 N
+[INFO] [1779180688.646734884] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.043, Zad=0.000 | Prędkość: Akt=0.090, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.000, Zad=0.000 | Prędkość: Akt=0.003, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.056, Zad=0.200 | Prędkość: Akt=0.040, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1934 N
+[INFO] [1779180688.668994656] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.043, Zad=0.000 | Prędkość: Akt=0.090, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.000, Zad=0.000 | Prędkość: Akt=0.003, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.056, Zad=0.200 | Prędkość: Akt=0.040, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1934 N
+[INFO] [1779180688.680338593] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.043, Zad=0.000 | Prędkość: Akt=0.090, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.000, Zad=0.000 | Prędkość: Akt=0.003, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.056, Zad=0.200 | Prędkość: Akt=0.040, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1934 N
+[INFO] [1779180688.695493715] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.039, Zad=0.000 | Prędkość: Akt=0.241, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.089, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.053, Zad=0.200 | Prędkość: Akt=0.083, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1529 N
+[INFO] [1779180688.703492234] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.039, Zad=0.000 | Prędkość: Akt=0.241, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.089, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.053, Zad=0.200 | Prędkość: Akt=0.083, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1529 N
+[INFO] [1779180688.726661820] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.039, Zad=0.000 | Prędkość: Akt=0.241, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.089, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.053, Zad=0.200 | Prędkość: Akt=0.083, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1529 N
+[INFO] [1779180688.744663752] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.039, Zad=0.000 | Prędkość: Akt=0.241, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.089, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.053, Zad=0.200 | Prędkość: Akt=0.083, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1529 N
+[INFO] [1779180688.756934327] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.039, Zad=0.000 | Prędkość: Akt=0.241, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.089, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.053, Zad=0.200 | Prędkość: Akt=0.083, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1529 N
+[INFO] [1779180688.767696202] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.039, Zad=0.000 | Prędkość: Akt=0.241, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.089, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.053, Zad=0.200 | Prędkość: Akt=0.083, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1529 N
+[INFO] [1779180688.789796985] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.033, Zad=0.000 | Prędkość: Akt=0.371, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.166, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.049, Zad=0.200 | Prędkość: Akt=0.071, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1624 N
+[INFO] [1779180688.810389186] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.033, Zad=0.000 | Prędkość: Akt=0.371, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.166, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.049, Zad=0.200 | Prędkość: Akt=0.071, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1624 N
+[INFO] [1779180688.832147757] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.033, Zad=0.000 | Prędkość: Akt=0.371, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.166, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.049, Zad=0.200 | Prędkość: Akt=0.071, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1624 N
+[INFO] [1779180688.844481116] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.033, Zad=0.000 | Prędkość: Akt=0.371, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.166, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.049, Zad=0.200 | Prędkość: Akt=0.071, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.1624 N
+[INFO] [1779180688.866788801] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.025, Zad=0.000 | Prędkość: Akt=0.448, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.214, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.044, Zad=0.200 | Prędkość: Akt=-0.003, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2381 N
+[INFO] [1779180688.874513601] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.025, Zad=0.000 | Prędkość: Akt=0.448, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.214, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.044, Zad=0.200 | Prędkość: Akt=-0.003, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2381 N
+[INFO] [1779180688.884214229] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.025, Zad=0.000 | Prędkość: Akt=0.448, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.214, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.044, Zad=0.200 | Prędkość: Akt=-0.003, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.2381 N
+[INFO] [1779180688.901889972] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.016, Zad=0.000 | Prędkość: Akt=0.445, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.226, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.038, Zad=0.200 | Prędkość: Akt=-0.125, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3644 N
+[INFO] [1779180688.924562557] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.016, Zad=0.000 | Prędkość: Akt=0.445, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.226, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.038, Zad=0.200 | Prędkość: Akt=-0.125, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3644 N
+[INFO] [1779180688.933795685] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.008, Zad=0.000 | Prędkość: Akt=0.374, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.200, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.033, Zad=0.200 | Prędkość: Akt=-0.255, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.950061842] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.008, Zad=0.000 | Prędkość: Akt=0.374, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.200, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.033, Zad=0.200 | Prędkość: Akt=-0.255, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.965989483] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.008, Zad=0.000 | Prędkość: Akt=0.374, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.200, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.033, Zad=0.200 | Prędkość: Akt=-0.255, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.971314419] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.008, Zad=0.000 | Prędkość: Akt=0.374, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.200, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.033, Zad=0.200 | Prędkość: Akt=-0.255, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.980114378] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.008, Zad=0.000 | Prędkość: Akt=0.374, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.200, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.033, Zad=0.200 | Prędkość: Akt=-0.255, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.990672573] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.008, Zad=0.000 | Prędkość: Akt=0.374, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.200, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.033, Zad=0.200 | Prędkość: Akt=-0.255, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180688.997143163] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.245, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.144, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.028, Zad=0.200 | Prędkość: Akt=-0.324, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180689.016983558] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.245, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.144, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.028, Zad=0.200 | Prędkość: Akt=-0.324, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180689.029202659] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.245, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.144, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.028, Zad=0.200 | Prędkość: Akt=-0.324, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180689.045662901] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=0.245, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.144, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.028, Zad=0.200 | Prędkość: Akt=-0.324, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.4000 N
+[INFO] [1779180689.062625132] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.016, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=0.032, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.024, Zad=0.200 | Prędkość: Akt=-0.128, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3997 N
+[INFO] [1779180689.078391922] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.016, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=0.032, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.024, Zad=0.200 | Prędkość: Akt=-0.128, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3997 N
+[INFO] [1779180689.089411483] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.016, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=0.032, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.024, Zad=0.200 | Prędkość: Akt=-0.128, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3997 N
+[INFO] [1779180689.102932458] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.016, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=0.032, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.024, Zad=0.200 | Prędkość: Akt=-0.128, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3997 N
+[INFO] [1779180689.123098096] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=-0.016, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=0.032, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.024, Zad=0.200 | Prędkość: Akt=-0.128, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3997 N
+[INFO] [1779180689.129166874] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=0.001, Zad=0.000 | Prędkość: Akt=-0.092, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.002, Zad=0.000 | Prędkość: Akt=0.077, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.022, Zad=0.200 | Prędkość: Akt=-0.095, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3876 N
+[INFO] [1779180689.140764384] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.139, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.091, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.020, Zad=0.200 | Prędkość: Akt=-0.057, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3819 N
+[INFO] [1779180689.147689091] [LeeController]: 
+--- TELEMETRIA OSI ---
+[X] Pozycja: Akt=-0.001, Zad=0.000 | Prędkość: Akt=-0.139, Zad=0.000 | Przysp Zad=0.000
+[Y] Pozycja: Akt=0.003, Zad=0.000 | Prędkość: Akt=0.091, Zad=0.000 | Przysp Zad=0.000
+[Z] Pozycja: Akt=0.020, Zad=0.200 | Prędkość: Akt=-0.057, Zad=-0.000 | Przysp Zad=0.000
+[Thrust]: 0.3819 N

@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "/home/developer/ros2_ws/src/uav_control",
+    "cmake.sourceDirectory": "/home/developer/ros2_ws/src/cf_control",
     "C_Cpp.clang_format_style": "file:${workspaceFolder}/.clang-format-humble",
     "[cpp]": {
         "editor.semanticHighlighting.enabled": true,

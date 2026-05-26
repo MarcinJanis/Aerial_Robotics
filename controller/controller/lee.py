@@ -15,22 +15,25 @@ class lee_controller(Node):
     def __init__(self):
         super().__init__('LeeController')
 
-        # --- controller configuration --- 
+        # --- controller configuration ---
+        # 
         self.declare_parameter('kx', 1.0)
         self.declare_parameter('kv', 1.0)
-        self.declare_parameter('kR', 1.0)
-        self.declare_parameter('kw', 1.0)
+        self.declare_parameter('kR', [0.004, 0.004, 0.0002])
+        self.declare_parameter('kw', [0.0004, 0.0004, 0.00002])
 
         self.kx = self.get_parameter('kx').value
         self.kv = self.get_parameter('kv').value
-        self.kR = self.get_parameter('kR').value
-        self.kw = self.get_parameter('kw').value
+        self.kR = np.array(self.get_parameter('kR').value)
+        self.kw = np.array(self.get_parameter('kw').value)
 
         # --- physical parameter ---
         self.g_vect = np.array([0.0, 0.0, -9.81])
         self.g = 9.81
-        self.max_thrust_CF = 0.3
-
+        
+        self.declare_parameter('max_thrust', 0.4) 
+        self.max_thrust_CF = self.get_parameter('max_thrust').value
+        
         # --- drone parameters ---
         self.declare_parameter('m', 1.0)  # [kg]
         self.m = self.get_parameter('m').value
@@ -199,7 +202,7 @@ class lee_controller(Node):
         )
         return F, M
 
-    def get_input_original(self, msg: Odometry):
+    def get_input(self, msg: Odometry):
         '''
         Receive actual drone state 
         '''
@@ -216,7 +219,7 @@ class lee_controller(Node):
             ang_vel = msg.twist.twist.angular
             self.act_angular_vel = np.array([ang_vel.x, ang_vel.y, ang_vel.z])
 
-    def get_input(self, msg: Odometry):
+    def get_input_2(self, msg: Odometry):
         '''
         Receive actual drone state 
         '''
@@ -255,11 +258,13 @@ class lee_controller(Node):
 
             self.x_sp = np.array([p_x, p_y, p_z])
             self.v_sp = np.array([v_x, v_y, v_z])
-            self.a_sp = np.array([a_x, a_y, a_z])
+
+            # self.a_sp = np.array([a_x, a_y, a_z])
+            self.a_sp = np.array([0.0, 0.0, 0.0])
 
             # Calc yaw and yaw rate based on x, y of trajectory
             speed_sq = v_x**2 + v_y**2
-            if speed_sq > 0.1:
+            if speed_sq > 0.5:
                 yaw = math.atan2(v_y, v_x)
                 yaw_rate = (v_x * a_y - v_y * a_x) / speed_sq
                 self.last_known_yaw = yaw
@@ -271,7 +276,12 @@ class lee_controller(Node):
             self.w_sp = np.array([0.0, 0.0, yaw_rate])
             self.dw_sp = np.zeros(3)
 
-        self.get_logger().info(f'State:\nActual: {self.act_translation} Setpoint: {self.x_sp}')
+            self.y_sp = 0.0
+            self.w_sp = np.array([0.0, 0.0, 0.0])
+            self.dw_sp = np.zeros(3)
+
+        # self.get_logger().info(f'State:\nActual: pose: {self.act_translation} Setpoint: {self.x_sp}')
+        
         # --- Controller calculation --- 
         
 
@@ -290,8 +300,14 @@ class lee_controller(Node):
         msg.torque.z = float(torque[2])
         self.publisher.publish(msg)
 
-        self.get_logger().info(f'Control: thrust: {thrust:.4} torque: {torque}')
-        
+        # self.get_logger().info(f'Control: thrust: {thrust:.4} torque: {torque}')
+        self.get_logger().info(
+            f'\n--- TELEMETRIA OSI ---'
+            f'\n[X] Pozycja: Akt={self.act_translation[0]:.3f}, Zad={self.x_sp[0]:.3f} | Prędkość: Akt={self.act_linear_vel[0]:.3f}, Zad={self.v_sp[0]:.3f} | Przysp Zad={self.a_sp[0]:.3f}'
+            f'\n[Y] Pozycja: Akt={self.act_translation[1]:.3f}, Zad={self.x_sp[1]:.3f} | Prędkość: Akt={self.act_linear_vel[1]:.3f}, Zad={self.v_sp[1]:.3f} | Przysp Zad={self.a_sp[1]:.3f}'
+            f'\n[Z] Pozycja: Akt={self.act_translation[2]:.3f}, Zad={self.x_sp[2]:.3f} | Prędkość: Akt={self.act_linear_vel[2]:.3f}, Zad={self.v_sp[2]:.3f} | Przysp Zad={self.a_sp[2]:.3f}'
+            f'\n[Thrust]: {thrust:.4f} N'
+        )
 
 def vee_map(x):
     """
