@@ -50,9 +50,9 @@ class lee_controller(Node):
         self.act_angular_vel = np.zeros((3,))
 
         self.prev_time_stamp = 0.0 # prev msg time stamp to derivative of position
-        self.vel_lp_filter = 0.2
+        self.vel_lp_filter = 1.0
         self.prev_time_stamp = 0.0
-        self.prev_pose = act_translation
+        self.prev_pose = self.act_translation
         
         # === trajectory state (Polynomials) ===
         self.poly_x = np.zeros(8)
@@ -207,7 +207,7 @@ class lee_controller(Node):
         )
         return F, M
 
-    def get_input(self, msg: Odometry):
+    def get_input_2(self, msg: Odometry):
         '''
         Receive actual drone state 
         '''
@@ -224,7 +224,7 @@ class lee_controller(Node):
             ang_vel = msg.twist.twist.angular
             self.act_angular_vel = np.array([ang_vel.x, ang_vel.y, ang_vel.z])
 
-    def get_input_2(self, msg: Odometry):
+    def get_input(self, msg: Odometry):
         '''
         Receive actual drone state 
         '''
@@ -243,13 +243,17 @@ class lee_controller(Node):
             vel_body = np.array([msg.twist.twist.linear.x, msg.twist.twist.linear.y, msg.twist.twist.linear.z])
             self.act_linear_vel = R_actual.apply(vel_body) 
             #--- velocity - ver 2: based on pose
-            act_time_stamp = msg.pose.timestamp # check !!!
-            d_pose = (self.prev_pose - self.act_translation) - np.max(act_time_stamp - self.prev_time_stamp, 1e-4)
-            d_pose_filtered = d_pose - self.vel_lp_filter * self.act_linear_vel # self.act_linear_vel used as prev 
-            
-            self.act_linear_vel = d_pose_filtered
-            self.prev_time_stamp = act_time_stamp
-            self.prev_pose = self.act_translation
+            # act_time_stamp = msg.header.stamp.sec + (msg.header.stamp.nanosec * 1e-9)
+            # dt = act_time_stamp - self.prev_time_stamp
+            # if dt > 1e-4:
+            #     raw_vel = (self.act_translation - self.prev_pose) / dt
+            #     filtered_vel = (self.vel_lp_filter * raw_vel) + ((1.0 - self.vel_lp_filter) * self.act_linear_vel) # self.act_linear_vel used as prev    
+            #     self.act_linear_vel = filtered_vel
+            # else:
+            #     self.act_linear_vel = np.zeros(3)
+
+            # self.prev_time_stamp = act_time_stamp
+            # self.prev_pose = self.act_translation
             
             #---
             
