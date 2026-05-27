@@ -118,7 +118,6 @@ class lee_controller(Node):
             self.poly_start_time_ros = self.get_clock().now()
 
     def sample_polynomial(self, c, s, T):
-        """ Próbkuje wielomian dla znormalizowanego czasu s w [0, 1] """
         if T < 1e-4:
             return c[0], 0.0, 0.0
         
@@ -207,61 +206,45 @@ class lee_controller(Node):
         )
         return F, M
 
-    def get_input_2(self, msg: Odometry):
-        '''
-        Receive actual drone state 
-        '''
-        if msg is not None:
-            pos = msg.pose.pose.position
-            self.act_translation = np.array([pos.x, pos.y, pos.z])
+    # def get_input_2(self, msg: Odometry):
+    #     '''
+    #     Receive actual drone state 
+    #     '''
+    #     if msg is not None:
+    #         pos = msg.pose.pose.position
+    #         self.act_translation = np.array([pos.x, pos.y, pos.z])
             
-            vel = msg.twist.twist.linear
-            self.act_linear_vel = np.array([vel.x, vel.y, vel.z])
+    #         vel = msg.twist.twist.linear
+    #         self.act_linear_vel = np.array([vel.x, vel.y, vel.z])
             
-            quat = msg.pose.pose.orientation
-            self.act_rotation_q = np.array([quat.x, quat.y, quat.z, quat.w])
+    #         quat = msg.pose.pose.orientation
+    #         self.act_rotation_q = np.array([quat.x, quat.y, quat.z, quat.w])
             
-            ang_vel = msg.twist.twist.angular
-            self.act_angular_vel = np.array([ang_vel.x, ang_vel.y, ang_vel.z])
+    #         ang_vel = msg.twist.twist.angular
+    #         self.act_angular_vel = np.array([ang_vel.x, ang_vel.y, ang_vel.z])
 
     def get_input(self, msg: Odometry):
-        '''
-        Receive actual drone state 
-        '''
+      
         if msg is not None:
             # pose - global 
             pos = msg.pose.pose.position
             self.act_translation = np.array([pos.x, pos.y, pos.z])
             
-            # orientation 
+            # orientation - global 
             quat = msg.pose.pose.orientation
             self.act_rotation_q = np.array([quat.x, quat.y, quat.z, quat.w])
             R_actual = r.from_quat(self.act_rotation_q)
             
-            # velocity -> transform from body to global frame
-            #--- velocity - ver 1: from Gazebo
+            # velocity - local 
             vel_body = np.array([msg.twist.twist.linear.x, msg.twist.twist.linear.y, msg.twist.twist.linear.z])
             self.act_linear_vel = R_actual.apply(vel_body) 
-            #--- velocity - ver 2: based on pose
-            # act_time_stamp = msg.header.stamp.sec + (msg.header.stamp.nanosec * 1e-9)
-            # dt = act_time_stamp - self.prev_time_stamp
-            # if dt > 1e-4:
-            #     raw_vel = (self.act_translation - self.prev_pose) / dt
-            #     filtered_vel = (self.vel_lp_filter * raw_vel) + ((1.0 - self.vel_lp_filter) * self.act_linear_vel) # self.act_linear_vel used as prev    
-            #     self.act_linear_vel = filtered_vel
-            # else:
-            #     self.act_linear_vel = np.zeros(3)
-
-            # self.prev_time_stamp = act_time_stamp
-            # self.prev_pose = self.act_translation
             
-            #---
-            
-            # angular velocity 
+            # angular velocity - local 
             ang_vel = msg.twist.twist.angular
             self.act_angular_vel = np.array([ang_vel.x, ang_vel.y, ang_vel.z])
 
     def set_output(self):
+
         # --- Inerpolate polynomials ---
         if self.poly_start_time_ros is not None:
             now = self.get_clock().now()
@@ -304,7 +287,6 @@ class lee_controller(Node):
         
         # --- Controller calculation --- 
         
-
         thrust, torque = self.output(
             self.act_translation,
             self.act_linear_vel,
@@ -322,10 +304,10 @@ class lee_controller(Node):
 
         # self.get_logger().info(f'Control: thrust: {thrust:.4} torque: {torque}')
         self.get_logger().info(
-            f'\n--- TELEMETRIA OSI ---'
-            f'\n[X] Pozycja: Akt={self.act_translation[0]:.3f}, Zad={self.x_sp[0]:.3f} | Prędkość: Akt={self.act_linear_vel[0]:.3f}, Zad={self.v_sp[0]:.3f} | Przysp Zad={self.a_sp[0]:.3f}'
-            f'\n[Y] Pozycja: Akt={self.act_translation[1]:.3f}, Zad={self.x_sp[1]:.3f} | Prędkość: Akt={self.act_linear_vel[1]:.3f}, Zad={self.v_sp[1]:.3f} | Przysp Zad={self.a_sp[1]:.3f}'
-            f'\n[Z] Pozycja: Akt={self.act_translation[2]:.3f}, Zad={self.x_sp[2]:.3f} | Prędkość: Akt={self.act_linear_vel[2]:.3f}, Zad={self.v_sp[2]:.3f} | Przysp Zad={self.a_sp[2]:.3f}'
+            f'\n-------------------'
+            f'\n[X] Pose: Act={self.act_translation[0]:.3f}, Sp={self.x_sp[0]:.3f} | Vel: Act={self.act_linear_vel[0]:.3f}, Sp={self.v_sp[0]:.3f} | '
+            f'\n[Y] Pose: Act={self.act_translation[1]:.3f}, Sp={self.x_sp[1]:.3f} | Vel: Act={self.act_linear_vel[1]:.3f}, Sp={self.v_sp[1]:.3f} | '
+            f'\n[Z] Pose: Act={self.act_translation[2]:.3f}, Sp={self.x_sp[2]:.3f} | Vel: Act={self.act_linear_vel[2]:.3f}, Sp={self.v_sp[2]:.3f} | '
             f'\n[Thrust]: {thrust:.4f} N'
         )
 

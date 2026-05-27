@@ -24,3 +24,6 @@ Ruvchomic XLaunch (z parametrem 0)
 
 wewnątrz konenetra wywołać: 
 export DISPLAY=host.docker.internal:0.0
+
+ros2 bag record /crazyflie/ActualState
+
