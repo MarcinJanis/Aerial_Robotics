@@ -88,7 +88,7 @@ class lee_controller(Node):
 
         # solver state 
         self.actual_state = np.zeros((13))
-        self.current_state[6] = 1.0 # quaternion init
+        self.actual_state[6] = 1.0 # quaternion init
 
 
     def setpoint(self, msg: PolynomialTrajectory):
@@ -170,7 +170,7 @@ class lee_controller(Node):
             now = self.get_clock().now()
             dt_since_msg = (now - self.poly_start_time_ros).nanoseconds / 1e9
             t_local = self.poly_t_local_start + dt_since_msg
-            s = t_local / T 
+            # s = t_local / T 
             
             # --- set actual state as initial condition --- 
             self.solver.set(0, "lbx", self.actual_state)
@@ -179,14 +179,16 @@ class lee_controller(Node):
             # --- set refernce for optimization (optimal trajectory) --- 
 
             for k in range(self.horizon_N):
-                s_t_norm = self.horizon_T / self.horizon_N * k 
+
+                future_time = t_local + self.optim_dt * k 
+                s_t = future_time / T
 
                 yref = np.zeros(17) # init ref (state [13] + control [6])
                 
                 # get trajectory and it's derivative
-                p_x, v_x, a_x, j_x, s_x = self._sample_polynomial(self.poly_x, s_t_norm, self.horizon_T)
-                p_y, v_y, a_y, j_y, s_y = self._sample_polynomial(self.poly_y, s_t_norm, self.horizon_T)
-                p_z, v_z, a_z, j_z, s_z = self._sample_polynomial(self.poly_z, s_t_norm, self.horizon_T)
+                p_x, v_x, a_x, j_x, s_x = self._sample_polynomial(self.poly_x, s_t, self.horizon_T)
+                p_y, v_y, a_y, j_y, s_y = self._sample_polynomial(self.poly_y, s_t, self.horizon_T)
+                p_z, v_z, a_z, j_z, s_z = self._sample_polynomial(self.poly_z, s_t, self.horizon_T)
 
                 x_ref = np.array([p_x, p_y, p_z, 0.0])
                 dx_ref = np.array([v_x, v_y, v_z, 0.0])
@@ -204,11 +206,12 @@ class lee_controller(Node):
 
                 self.solver.set(k, "yref", yref)
 
-           # --- final state in optimization --- 
-        
-            p_x, v_x, a_x, j_x, s_x = self._sample_polynomial(self.poly_x, 1, self.horizon_T)
-            p_y, v_y, a_y, j_y, s_y = self._sample_polynomial(self.poly_y, 1, self.horizon_T)
-            p_z, v_z, a_z, j_z, s_z = self._sample_polynomial(self.poly_z, 1, self.horizon_T)
+           # --- final state in optimization ---  
+            s_t = (t_local + self.horizon_T) / T
+
+            p_x, v_x, a_x, j_x, s_x = self._sample_polynomial(self.poly_x, s_t, self.horizon_T)
+            p_y, v_y, a_y, j_y, s_y = self._sample_polynomial(self.poly_y, s_t, self.horizon_T)
+            p_z, v_z, a_z, j_z, s_z = self._sample_polynomial(self.poly_z, s_t, self.horizon_T)
 
             x_ref = np.array([p_x, p_y, p_z, 0.0])
             dx_ref = np.array([v_x, v_y, v_z, 0.0])
@@ -234,7 +237,9 @@ class lee_controller(Node):
             thrust = u_opt[0]
             torque = u_opt[1:]
             return thrust, torque 
-
+        else: 
+            return 0.0, np.array([0.0, 0.0, 0.0])
+        
     def _set_output(self):
         thrust, torque = self.control_loop_iter()
         # --- Publish ---
