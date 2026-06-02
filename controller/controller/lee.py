@@ -226,20 +226,21 @@ class lee_controller(Node):
     def get_input(self, msg: Odometry):
       
         if msg is not None:
-            # pose - global 
+
+            # pose - global
             pos = msg.pose.pose.position
             self.act_translation = np.array([pos.x, pos.y, pos.z])
             
-            # orientation - global 
+            # orientation - global
             quat = msg.pose.pose.orientation
             self.act_rotation_q = np.array([quat.x, quat.y, quat.z, quat.w])
             R_actual = r.from_quat(self.act_rotation_q)
             
-            # velocity - local 
+            # velocity - local
             vel_body = np.array([msg.twist.twist.linear.x, msg.twist.twist.linear.y, msg.twist.twist.linear.z])
             self.act_linear_vel = R_actual.apply(vel_body) 
             
-            # angular velocity - local 
+            # angular velocity - local
             ang_vel = msg.twist.twist.angular
             self.act_angular_vel = np.array([ang_vel.x, ang_vel.y, ang_vel.z])
 
@@ -247,6 +248,7 @@ class lee_controller(Node):
 
         # --- Inerpolate polynomials ---
         if self.poly_start_time_ros is not None:
+            
             now = self.get_clock().now()
             dt_since_msg = (now - self.poly_start_time_ros).nanoseconds / 1e9
             

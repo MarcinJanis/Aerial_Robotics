@@ -46,8 +46,8 @@ def state_from_output(m, J, g, input, dinput, d2input, d3input, d4input):
 
     q = R.from_matrix(rot_matrix).as_quat()
     
-    q = np.array([q[3], q[0], q[1], q[2]]) # Scipy use [x, y, z, w] -> val data use [w, x, y, z]
-    
+    # q = np.array([q[3], q[0], q[1], q[2]]) # Scipy use [x, y, z, w] -> val data use [w, x, y, z]
+
     # --- angular velocity ---
 
     h = m/thrust * (d3x - np.dot(zb, d3x) * zb) # projection of jerk, projected on x-y plane (global ref frame)

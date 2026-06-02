@@ -12,7 +12,7 @@ It create folder with template
 
 - For paclage with node source code (python) execute: 
 
-`ros2 pkg create --build-type ament_python <new_package_name> --dependencies rclpy cf_control_msgs drone_model_msgs geometry_msgss`
+`ros2 pkg create --build-type ament_python <new_package_name> --dependencies rclpy cf_control_msgs drone_model_msgs geometry_msgs`
 
 (after --dependecies we can put all necessery dependencies)
 
