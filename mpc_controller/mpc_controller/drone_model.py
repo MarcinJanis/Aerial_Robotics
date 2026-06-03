@@ -85,14 +85,9 @@ class DroneModel:
             horzcat(-qx, -qy, -qz,  qw)
         )
         omega_quat = vertcat(wx, wy, wz, 0.0) 
-        q_dot_kin = 0.5 * mtimes(Q_w, omega_quat)
-
-        # =======================================================
-        # ???? Quaternion stabilization 
-        c_stab = 100.0  # coefficent of stabilization
-        quat_norm_error = 1.0 - (qx**2 + qy**2 + qz**2 + qw**2)
-        q_dot = q_dot_kin + c_stab * quat_norm_error * q
-        # =======================================================
+        
+        # CZYSTA KINEMATYKA (BEZ c_stab!)
+        q_dot = 0.5 * mtimes(Q_w, omega_quat)
 
         # angular acceleration - dynamics rotation equation
         Jw = mtimes(J, omega)              
