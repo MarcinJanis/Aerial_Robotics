@@ -96,6 +96,11 @@ class mpc_controller(Node):
         # self.poly_t_local_start = self.poly_start_time_ros
         # self.poly_T = self.horizon_T
 
+        self.last_pos = None
+        self.last_time = None
+        self.filtered_vel = np.array([0.0, 0.0, 0.0])
+        self.alpha = 0.3  # Współczynnik wygładzania (im mniejszy, tym bardziej gładkie, ale z opóźnieniem)
+
     def setpoint(self, msg: PolynomialTrajectory):
     
         if msg is not None:
@@ -143,44 +148,47 @@ class mpc_controller(Node):
         s = s_s / (T**4)
         return p, v, a, j, s
 
-    def _get_input_2(self, msg: Odometry):
+
+    def _get_input2(self, msg: Odometry):
+        # get_input2 calculte valicity based on position rate
         if msg is not None:
-            # pose - global 
-            pos = msg.pose.pose.position
-            current_pos = np.array([pos.x, pos.y, pos.z])
+            # 1. Odczyt pozycji globalnej
+            current_pos = np.array([msg.pose.pose.position.x, 
+                                    msg.pose.pose.position.y, 
+                                    msg.pose.pose.position.z])
             
-            # orientation - global 
+            # 2. Odczyt orientacji
             quat = msg.pose.pose.orientation
             self.act_rotation_q = np.array([quat.x, quat.y, quat.z, quat.w])
             
-            # Odczyt czasu z wiadomości dla perfekcyjnej synchronizacji
+            # 3. Obliczanie prędkości liniowej (Różniczkowanie + Filtr EMA)
             current_time = msg.header.stamp.sec + msg.header.stamp.nanosec * 1e-9
-
-            # ============================================================
-            # OMIJAMY ZEPSUTY TWIST Z GAZEBO! 
-            # Obliczamy prawdziwą, globalną prędkość różniczkując pozycję.
-            if hasattr(self, 'prev_pos') and self.prev_pos is not None:
-                dt = current_time - self.prev_time
-                if dt > 1e-5:  # Zabezpieczenie przed dzieleniem przez zero
-                    act_linear_vel = (current_pos - self.prev_pos) / dt
-                else:
-                    act_linear_vel = np.array([0.0, 0.0, 0.0])
-            else:
-                act_linear_vel = np.array([0.0, 0.0, 0.0])
-
-            # Zapisz na następny krok
-            self.prev_pos = current_pos
-            self.prev_time = current_time
-            # ============================================================
             
-            # angular velocity - local (żyroskopy w Gazebo zazwyczaj działają dobrze, więc je zostawiamy)
-            ang_vel = msg.twist.twist.angular
-
-            self.actual_state = np.array([pos.x, pos.y, pos.z,
-                                          quat.x, quat.y, quat.z, quat.w,
-                                          act_linear_vel[0], act_linear_vel[1], act_linear_vel[2],
-                                          ang_vel.x, ang_vel.y, ang_vel.z])
+            if self.last_pos is not None and current_time > self.last_time:
+                dt = current_time - self.last_time
+                # Oblicz surową prędkość
+                raw_vel = (current_pos - self.last_pos) / dt
+                # Wygładź filtracją EMA
+                self.filtered_vel = self.alpha * raw_vel + (1.0 - self.alpha) * self.filtered_vel
             
+            self.last_pos = current_pos
+            self.last_time = current_time
+
+            # 4. Prędkość kątowa (zostawiamy surową z wiadomości - układ lokalny)
+            ang_vel = np.array([msg.twist.twist.angular.x, 
+                                msg.twist.twist.angular.y, 
+                                msg.twist.twist.angular.z])
+
+            # 5. Budowa stanu (13 elementów)
+            # [p, q, v, w] - wszystkie w układzie GLOBALNYM (oprócz w)
+            self.actual_state = np.array([
+                current_pos[0], current_pos[1], current_pos[2],
+                quat.x, quat.y, quat.z, quat.w,
+                self.filtered_vel[0], self.filtered_vel[1], self.filtered_vel[2],
+                ang_vel[0], ang_vel[1], ang_vel[2]
+            ])
+
+
     def _get_input(self, msg: Odometry):
       
         if msg is not None:
