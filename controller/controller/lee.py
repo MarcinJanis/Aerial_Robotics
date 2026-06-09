@@ -17,13 +17,13 @@ class lee_controller(Node):
 
         # --- controller configuration ---
         # 
-        self.declare_parameter('kx', 1.0)
-        self.declare_parameter('kv', 1.0)
+        self.declare_parameter('kx', [0.2, 0.2, 0.2])
+        self.declare_parameter('kv', [0.2, 0.2, 0.2])
         self.declare_parameter('kR', [0.004, 0.004, 0.0002])
         self.declare_parameter('kw', [0.0004, 0.0004, 0.00002])
 
-        self.kx = self.get_parameter('kx').value
-        self.kv = self.get_parameter('kv').value
+        self.kx = np.array(self.get_parameter('kx').value)
+        self.kv = np.array(self.get_parameter('kv').value)
         self.kR = np.array(self.get_parameter('kR').value)
         self.kw = np.array(self.get_parameter('kw').value)
 
@@ -31,9 +31,18 @@ class lee_controller(Node):
         self.g_vect = np.array([0.0, 0.0, -9.81])
         self.g = 9.81
         
-        self.declare_parameter('max_thrust', 0.4) 
+        self.declare_parameter('max_thrust', 0.5) 
         self.max_thrust_CF = self.get_parameter('max_thrust').value
+
+        self.declare_parameter('min_thrust', 0.15) 
+        self.min_thrust_CF = self.get_parameter('min_thrust').value
         
+        self.declare_parameter('max_err_xy', 0.3) 
+        self.max_error_xy = self.get_parameter('max_err_xy').value
+
+        self.declare_parameter('max_tilit', 35) 
+        self.max_tilt_rad = np.radians(self.get_parameter('max_tilit').value)
+       
         # --- drone parameters ---
         self.declare_parameter('m', 1.0)  # [kg]
         self.m = self.get_parameter('m').value
@@ -147,13 +156,29 @@ class lee_controller(Node):
         ex = x - self.x_sp  # position error [3,]
         ev = v - self.v_sp  # velocity error [3,]
 
+
+        # limit error in x-y plane 
+        # (improve stability by avoiding demand of too big heave)
+        ex_xy_norm = np.linalg.norm(ex[:2])
+        if ex_xy_norm > self.max_error_xy:
+            ex[0] = ex[0] * (self.max_error_xy / ex_xy_norm)
+            ex[1] = ex[1] * (self.max_error_xy / ex_xy_norm)
+
         # === Target thrust - global body frame === 
         T_target = (
             -self.kx * ex - self.kv * ev + ax_z_g * self.m * self.g + self.m * self.a_sp
         )  # desire thrust vector
         
-        if T_target[2] < 0.01:
-            T_target[2] = 0.01
+        # if heave is too big, limit horizontal forces demand 
+        if T_target[2] > 0.0:  # if thrust if pointed up
+            xy_norm = np.linalg.norm(T_target[0:2])
+            max_xy_allowed = T_target[2] * np.tan(self.max_tilt_rad)
+            if xy_norm > max_xy_allowed:
+                T_target[0:2] = T_target[0:2] * (max_xy_allowed / xy_norm)
+
+    
+        # if T_target[2] < 0.01:
+        #     T_target[2] = 0.01
             
         # === compose target rotation matrix ===
         if np.linalg.norm(T_target) > 1e-4:
@@ -190,7 +215,7 @@ class lee_controller(Node):
 
         # === compute control output ===
         F = np.dot(T_target, R_actual.apply(ax_z_g))
-        F = np.clip(F, 0.01, self.max_thrust_CF) 
+        F = np.clip(F, self.min_thrust_CF, self.max_thrust_CF) 
 
         R_err_mat = (R_actual.inv() * R_target).as_matrix()
         
@@ -241,8 +266,40 @@ class lee_controller(Node):
             self.act_linear_vel = R_actual.apply(vel_body) 
             
             # angular velocity - local
-            ang_vel = msg.twist.twist.angular
-            self.act_angular_vel = np.array([ang_vel.x, ang_vel.y, ang_vel.z])
+            self.act_angular_vel = np.array([msg.twist.twist.angular.x, msg.twist.twist.angular.y, msg.twist.twist.angular.z]) 
+            # self.act_angular_vel = R_actual.apply(ang_vel)
+
+    def set_output_hover(self):
+        self.x_sp = np.array([0.0, 0.0, 0.3])
+        self.v_sp = np.array([0.0, 0.0, 0.0])
+        self.a_sp = np.array([0.0, 0.0, 0.0])
+        self.y_sp = 0.0
+        self.w_sp = np.array([0.0, 0.0, 0.0])
+        self.dw_sp = np.zeros(3)
+
+        thrust, torque = self.output(
+            self.act_translation,
+            self.act_linear_vel,
+            self.act_rotation_q,
+            self.act_angular_vel,
+        )
+        
+        # --- Publish ---
+        msg = ThrustAndTorque()
+        msg.collective_thrust = float(thrust)
+        msg.torque.x = float(torque[0])
+        msg.torque.y = float(torque[1])
+        msg.torque.z = float(torque[2])
+        self.publisher.publish(msg)
+
+        # self.get_logger().info(f'Control: thrust: {thrust:.4} torque: {torque}')
+        self.get_logger().info(
+            f'\n-------------------'
+            f'\n[X] Pose: Act={self.act_translation[0]:.3f}, Sp={self.x_sp[0]:.3f} | Vel: Act={self.act_linear_vel[0]:.3f}, Sp={self.v_sp[0]:.3f} | '
+            f'\n[Y] Pose: Act={self.act_translation[1]:.3f}, Sp={self.x_sp[1]:.3f} | Vel: Act={self.act_linear_vel[1]:.3f}, Sp={self.v_sp[1]:.3f} | '
+            f'\n[Z] Pose: Act={self.act_translation[2]:.3f}, Sp={self.x_sp[2]:.3f} | Vel: Act={self.act_linear_vel[2]:.3f}, Sp={self.v_sp[2]:.3f} | '
+            f'\n[Thrust]: {thrust:.4f} N'
+        )
 
     def set_output(self):
 
@@ -264,8 +321,25 @@ class lee_controller(Node):
             self.x_sp = np.array([p_x, p_y, p_z])
             self.v_sp = np.array([v_x, v_y, v_z])
 
+            # # add acceleration to setpoint 
+            # max_accel_xy = 2.0  # Bardzo łagodne przyspieszenie boczne
+            # max_accel_z_up = 2.0   # Przyspieszenie w górę
+            # max_accel_z_down = -4.0 # Przyspieszenie w dół (Musi być > -9.81!)
+
+
+            # # --
+            # a_x_safe = np.clip(a_x, -max_accel_xy, max_accel_xy)
+            # a_y_safe = np.clip(a_y, -max_accel_xy, max_accel_xy)
+            # a_z_safe = np.clip(a_z, max_accel_z_down, max_accel_z_up)
+
+            # self.a_sp = np.array([a_x_safe, a_y_safe, a_z_safe])
+
             # self.a_sp = np.array([a_x, a_y, a_z])
+
+            # --
+
             self.a_sp = np.array([0.0, 0.0, 0.0])
+            # --
 
             # Calc yaw and yaw rate based on x, y of trajectory
             speed_sq = v_x**2 + v_y**2
@@ -298,7 +372,7 @@ class lee_controller(Node):
         
         # --- Publish ---
         msg = ThrustAndTorque()
-        msg.collective_thrust = float(thrust)
+        msg.collective_thrust = float(thrust) 
         msg.torque.x = float(torque[0])
         msg.torque.y = float(torque[1])
         msg.torque.z = float(torque[2])

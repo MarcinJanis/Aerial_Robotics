@@ -2,7 +2,8 @@
   ros__parameters:
 
     dt: 0.05
-    desire_speed: 0.3
-    waypoints_pth: '/home/developer/ros2_ws/src/trajectory/trajectory_examples/elipse.csv'
-    # '/home/developer/ros2_ws/src/trajectory/trajectory_examples/waypoints1.csv'
+    desire_speed: 0.06 # 0.02
+    # waypoints_pth: '/home/developer/ros2_ws/src/trajectory/trajectory_examples/elipse.csv'
+    waypoints_pth: '/home/developer/ros2_ws/src/trajectory/trajectory_examples/waypoints1.csv'
+    # waypoints_pth: '/home/developer/ros2_ws/src/trajectory/trajectory_examples/screw.csv'
     ROS2_topic_name_TrajectorySetpoint: '/crazyflie/Trajectory'

@@ -86,8 +86,15 @@ class DroneModel:
         )
         omega_quat = vertcat(wx, wy, wz, 0.0) 
         
-        # CZYSTA KINEMATYKA (BEZ c_stab!)
-        q_dot = 0.5 * mtimes(Q_w, omega_quat)
+        # # CZYSTA KINEMATYKA (BEZ c_stab!)
+        # q_dot = 0.5 * mtimes(Q_w, omega_quat)
+
+   
+        quat_norm_sq = qx**2 + qy**2 + qz**2 + qw**2
+        c_stab = 50.0  # Silniejszy współczynnik ściągający na kulę jednostkową
+        # Prawidłowa kinematyka + stabilizacja do sfery jednostkowej
+        q_dot = 0.5 * mtimes(Q_w, omega_quat) + 0.5 * c_stab * q * (1.0 - quat_norm_sq)
+
 
         # angular acceleration - dynamics rotation equation
         Jw = mtimes(J, omega)              

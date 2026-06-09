@@ -21,19 +21,19 @@ ___
 trajectory generator 
 
 ```bash
-ros2 run trajectory trajectory_generator --ros-args --params-file /home/developer/ros2_ws/src/trajectory/trajectory/param.yaml
+ros2 run trajectory trajectory_generator --ros-args --params-file /home/developer/ros2_ws/src/trajectory/trajectory/param.yaml 
 ```
 ___
 lee controller 
 
 ```bash
-ros2 run controller lee_controller --ros-args --params-file /home/developer/ros2_ws/src/controller/controller/param.yaml
+ros2 run controller lee_controller --ros-args --params-file /home/developer/ros2_ws/src/controller/controller/param.yaml -p use_sim_time:=true
 ```
 ___
 mpc controller 
 
 ```bash
-ros2 run mpc_controller mpc_controller --ros-args --params-file /home/developer/ros2_ws/src/mpc_controller/mpc_controller/param.yaml
+ros2 run mpc_controller mpc_controller --ros-args --params-file /home/developer/ros2_ws/src/mpc_controller/mpc_controller/param.yaml -p use_sim_time:=true
 ```
 
 Ruvchomic XLaunch (z parametrem 0)
@@ -41,5 +41,5 @@ Ruvchomic XLaunch (z parametrem 0)
 wewnątrz konenetra wywołać: 
 export DISPLAY=host.docker.internal:0.0
 
-ros2 bag record /crazyflie/ActualState
+ros2 bag record /crazyflie/ActualState /cf_control/control_command
 

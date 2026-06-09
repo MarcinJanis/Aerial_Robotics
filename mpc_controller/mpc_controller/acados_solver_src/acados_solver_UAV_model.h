@@ -41,7 +41,7 @@
 #define UAV_MODEL_NU     4
 #define UAV_MODEL_NP     7
 #define UAV_MODEL_NP_GLOBAL     0
-#define UAV_MODEL_NBX    0
+#define UAV_MODEL_NBX    3
 #define UAV_MODEL_NBX0   13
 #define UAV_MODEL_NBU    4
 #define UAV_MODEL_NSBX   0

@@ -9,7 +9,7 @@ def generate_waypoints(file_name, eq_x, eq_y, eq_z, n):
     t = np.arange(n)
     x = eq_x(t)
     y = eq_y(t)
-    z = eq_z(t)
+    z = eq_z(n)
 
     pts = np.column_stack((x, y, z))
 
@@ -25,17 +25,20 @@ def generate_waypoints(file_name, eq_x, eq_y, eq_z, n):
 
 def execute():
 
-    file_name = '/home/developer/ros2_ws/src/trajectory/trajectory_examples/elipse.csv'
+    file_name = '/home/developer/ros2_ws/src/trajectory/trajectory_examples/screw.csv'
 
-    pts_num = 20
+    pts_num = 60
 
     # define funcitons
     def eqx(n):
-        return 2*np.sin(2*np.pi/pts_num*n)
+        # return 2*np.sin(2*np.pi/pts_num*n)
+        return 2*np.sin(2*np.pi/(pts_num/3)*n)
     def eqy(n):
-        return 3*np.cos(2*np.pi/pts_num*n) - 3
+        # return 3*np.cos(2*np.pi/pts_num*n) - 3
+        return 3*np.cos(2*np.pi/(pts_num/3)*n) - 3
     def eqz(n):
-        return np.ones_like(n)
+        return np.linspace(0.1, 3.0, n)
+        # return np.ones_like(n)
 
     result = generate_waypoints(file_name, eqx, eqy, eqz, pts_num)
 
@@ -65,4 +68,4 @@ def show_traj(path):
 
     
 execute()   
-show_traj('/home/developer/ros2_ws/src/trajectory/trajectory_examples/elipse.csv')
+show_traj('/home/developer/ros2_ws/src/trajectory/trajectory_examples/screw.csv')
