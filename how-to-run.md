@@ -21,7 +21,7 @@ ___
 trajectory generator 
 
 ```bash
-ros2 run trajectory trajectory_generator --ros-args --params-file /home/developer/ros2_ws/src/trajectory/trajectory/param.yaml 
+ros2 run trajectory trajectory_generator --ros-args --params-file /home/developer/ros2_ws/src/trajectory/trajectory/param.yaml -p use_sim_time:=true
 ```
 ___
 lee controller 

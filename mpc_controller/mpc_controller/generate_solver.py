@@ -34,22 +34,20 @@ def generate_mpc_solver():
     ocp.solver_options.tf = Tf
 
     ocp.code_export_directory = os.path.join(current_dir, 'acados_solver_src')
-    # ocp.code_export_directory = 'acados_solver_src' # directory for generated c files
 
     # Define cost funciton
     # Non-linear least squares
     ocp.cost.cost_type = 'NONLINEAR_LS'
     ocp.cost.cost_type_e = 'NONLINEAR_LS'
 
-    # Mówimy solverowi, co dokładnie ma minimalizować.
-    # Chcemy minimalizować błąd między (stanami i sterowaniami) a referencją.
     model.cost_y_expr = cs.vertcat(model.x, model.u)
     model.cost_y_expr_e = model.x
 
     # Weights matrix for state
-    Q = np.diag([100.0, 100.0, 150.0,  50.0, 50.0, 50.0, 50.0,  30.0, 30.0, 40.0,  10.0, 10.0, 10.0])
+    Q = np.diag([50.0, 50.0, 150.0,  50.0, 50.0, 50.0, 50.0,  30.0, 30.0, 40.0,  50.0, 50.0, 10.0])
 
     # Weights for control
+
     R = np.diag([50.0, 50000.0, 50000.0, 80000.0])
 
     ocp.cost.W = scipy.linalg.block_diag(Q, R)
@@ -61,21 +59,16 @@ def generate_mpc_solver():
 
     # --- Solver constrains ---
     # [thrust, torque_x, torque_y, torque_z]
+    
 
-    # control 
     ocp.constraints.lbu = np.array([0.15, -0.005, -0.005, -0.002])
     ocp.constraints.ubu = np.array([0.55,  0.005,  0.005,  0.002])
-    ocp.constraints.idxbu = np.array([0, 1, 2, 3])
-
-    # angular velocitie
-    ocp.constraints.lbx = np.array([-0.3, -0.3, -10.0, -10.0, -5.0])
-    ocp.constraints.ubx = np.array([ 0.3,  0.3,  10.0,  10.0,  5.0])
-    ocp.constraints.idxbx = np.array([3, 4, 10, 11, 12])
-
-    # ocp.constraints.lbu = np.array([0.05, -0.03, -0.03, -0.03])
-    # # ocp.constraints.lbu = np.array([0.05, -0.03, -0.03, -0.02])  # lower bounds
-    # ocp.constraints.ubu = np.array([0.55, 0.03, 0.03, 0.03])  # upper bounds
     ocp.constraints.idxbu = np.array([0, 1, 2, 3])  # idxs
+
+   
+    ocp.constraints.lbx = np.array([-1.0, -1.0, -10.0, -10.0, -5.0])
+    ocp.constraints.ubx = np.array([ 1.0,  1.0,  10.0,  10.0,  5.0])
+    ocp.constraints.idxbx = np.array([3, 4, 10, 11, 12])
 
     # --- initial state (init with zeros) ---
     x0 = np.zeros(nx)
@@ -103,6 +96,7 @@ def generate_mpc_solver():
     ocp.solver_options.nlp_solver_type = 'SQP_RTI'
 
     ocp.solver_options.sim_method_num_stages = 4  # RK4
+   
     ocp.solver_options.sim_method_num_steps = 2
     ocp.solver_options.qp_solver_iter_max = 50
 

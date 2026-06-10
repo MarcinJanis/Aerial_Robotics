@@ -10,6 +10,9 @@ from trajectory.state_from_traj import state_from_output
 from cf_control_msgs.msg import ThrustAndTorque
 from drone_model_msgs.msg import PolynomialTrajectory
 
+import csv
+import os
+from datetime import datetime
 
 class mpc_controller(Node):
     def __init__(self):
@@ -100,6 +103,34 @@ class mpc_controller(Node):
         self.alpha = (
             0.3  # Współczynnik wygładzania (im mniejszy, tym bardziej gładkie, ale z opóźnieniem)
         )
+
+
+
+        # =============================
+        log_dir = os.path.expanduser('~/ros2_ws/src/mpc_controller/logs')
+        os.makedirs(log_dir, exist_ok=True)
+        
+        timestamp_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+        self.csv_file = open(f'{log_dir}/mpc_log_{timestamp_str}.csv', mode='w', newline='')
+        self.csv_writer = csv.writer(self.csv_file)
+        
+        header = [
+            'time', 'status',
+            'pos_x', 'pos_y', 'pos_z', 
+            'q_x', 'q_y', 'q_z', 'q_w', 
+            'v_x', 'v_y', 'v_z', 
+            'w_x', 'w_y', 'w_z',
+            'ref_pos_x', 'ref_pos_y', 'ref_pos_z', 
+            'ref_q_x', 'ref_q_y', 'ref_q_z', 'ref_q_w', 
+            'ref_v_x', 'ref_v_y', 'ref_v_z', 
+            'ref_w_x', 'ref_w_y', 'ref_w_z',
+            'thrust', 'torque_x', 'torque_y', 'torque_z'
+        ]
+        self.csv_writer.writerow(header)
+        self.csv_file.flush() 
+        # ==============================
+
+
 
     def setpoint(self, msg: PolynomialTrajectory):
 
@@ -241,7 +272,7 @@ class mpc_controller(Node):
             vel_body = np.array(
                 [msg.twist.twist.linear.x, msg.twist.twist.linear.y, msg.twist.twist.linear.z]
             )
-            act_linear_vel = vel_body
+            act_linear_vel = R_actual.apply(vel_body)
 
             # angular velocity - local
             ang_vel = msg.twist.twist.angular
@@ -346,6 +377,9 @@ class mpc_controller(Node):
                 if show:
                     ref_path.append([p_x, p_y, p_z])
 
+                if k == 0:
+                    current_ref_state = state_ref.copy()
+
             # --- final state in optimization ---
             s_t = (t_local + self.horizon_T) / T
             p_x, v_x, a_x, j_x, s_x = self._sample_polynomial(self.poly_x, s_t, T)
@@ -391,16 +425,30 @@ class mpc_controller(Node):
             if status != 0:
                 self.get_logger().warning(f'Acados solver error: {status}')
 
-            if show:
-                for i in range(self.horizon_N + 1):
-                    x_opt = self.solver.get(i, 'x')
-                    opt_path.append([x_opt[0], x_opt[1], x_opt[2]])
-                    self._draw_cv2_radar(ref_path, opt_path)
+            # if show:
+            #     for i in range(self.horizon_N + 1):
+            #         x_opt = self.solver.get(i, 'x')
+            #         opt_path.append([x_opt[0], x_opt[1], x_opt[2]])
+            #         self._draw_cv2_radar(ref_path, opt_path)
 
             # get first control value
             u_opt = self.solver.get(0, 'u')
             thrust = u_opt[0]
             torque = u_opt[1:]
+
+            # ==========================================
+            # NOWE: --- ZAPIS DO PLIKU CSV ---
+            # ==========================================
+            now = self.get_clock().now().nanoseconds / 1e9
+            row = [now, status]
+            row.extend(self.actual_state.tolist())     
+            row.extend(current_ref_state.tolist())     
+            row.extend([thrust, torque[0], torque[1], torque[2]]) 
+            
+            self.csv_writer.writerow(row)
+            self.csv_file.flush() 
+            # ==========================================
+
             return thrust, torque
         else:
             return 0.0, np.array([0.0, 0.0, 0.0])
@@ -566,9 +614,9 @@ class mpc_controller(Node):
         # --- Publish ---
         msg = ThrustAndTorque()
         msg.collective_thrust = float(thrust)
-        msg.torque.x = float(torque[0])
-        msg.torque.y = float(torque[1])
-        msg.torque.z = float(torque[2])
+        msg.torque.x = float(-torque[0])
+        msg.torque.y = float(-torque[1])
+        msg.torque.z = float(-torque[2])
         self.publisher.publish(msg)
 
         self.get_logger().info(f'\nthrust: {thrust}\ntorque: {torque}')
@@ -581,51 +629,53 @@ class mpc_controller(Node):
             f'Vel:\n[vx, vy, vz]: [{self.actual_state[7]:.3} ,{self.actual_state[8]:.3}, {self.actual_state[9]:.3}]'
         )
 
-    def _draw_cv2_radar(self, ref_path, opt_path):
-        # Tworzymy czarne tło o wymiarach 500x500 pikseli
-        img = np.zeros((500, 500, 3), dtype=np.uint8)
 
-        cx, cy = 250, 250  # Środek ekranu
-        scale = 150.0  # Skala: 1 metr to 150 pikseli na ekranie
 
-        # Funkcja pomocnicza: przelicza współrzędne globalne na piksele względem drona
-        def to_img(x, y):
-            dx = x - self.actual_state[0]
-            dy = y - self.actual_state[1]
-            img_x = int(cx - dy * scale)  # Y drona to oś X na ekranie (lewo/prawo)
-            img_y = int(cy - dx * scale)  # X drona to oś Y na ekranie (przód/tył)
-            return (img_x, img_y)
+    # def _draw_cv2_radar(self, ref_path, opt_path):
+    #     # Tworzymy czarne tło o wymiarach 500x500 pikseli
+    #     img = np.zeros((500, 500, 3), dtype=np.uint8)
 
-        # 1. Rysowanie trajektorii referencyjnej (ZIELONA)
-        for i in range(len(ref_path) - 1):
-            pt1 = to_img(ref_path[i][0], ref_path[i][1])
-            pt2 = to_img(ref_path[i + 1][0], ref_path[i + 1][1])
-            cv2.line(img, pt1, pt2, (0, 255, 0), 2)
-            cv2.circle(img, pt1, 3, (0, 255, 0), -1)
+    #     cx, cy = 250, 250  # Środek ekranu
+    #     scale = 150.0  # Skala: 1 metr to 150 pikseli na ekranie
 
-        # 2. Rysowanie trajektorii zoptymalizowanej (CZERWONA)
-        for i in range(len(opt_path) - 1):
-            pt1 = to_img(opt_path[i][0], opt_path[i][1])
-            pt2 = to_img(opt_path[i + 1][0], opt_path[i + 1][1])
-            cv2.line(img, pt1, pt2, (0, 0, 255), 2)
-            cv2.circle(img, pt1, 3, (0, 0, 255), -1)
+    #     # Funkcja pomocnicza: przelicza współrzędne globalne na piksele względem drona
+    #     def to_img(x, y):
+    #         dx = x - self.actual_state[0]
+    #         dy = y - self.actual_state[1]
+    #         img_x = int(cx - dy * scale)  # Y drona to oś X na ekranie (lewo/prawo)
+    #         img_y = int(cy - dx * scale)  # X drona to oś Y na ekranie (przód/tył)
+    #         return (img_x, img_y)
 
-        # 3. Rysowanie samego drona (NIEBIESKIE KÓŁKO W ŚRODKU)
-        drone_pt = to_img(self.actual_state[0], self.actual_state[1])
-        cv2.circle(img, drone_pt, 8, (255, 0, 0), -1)
+    #     # 1. Rysowanie trajektorii referencyjnej (ZIELONA)
+    #     for i in range(len(ref_path) - 1):
+    #         pt1 = to_img(ref_path[i][0], ref_path[i][1])
+    #         pt2 = to_img(ref_path[i + 1][0], ref_path[i + 1][1])
+    #         cv2.line(img, pt1, pt2, (0, 255, 0), 2)
+    #         cv2.circle(img, pt1, 3, (0, 255, 0), -1)
 
-        # Dodanie siatki odniesienia (krzyż)
-        cv2.line(img, (cx, 0), (cx, 500), (50, 50, 50), 1)
-        cv2.line(img, (0, cy), (500, cy), (50, 50, 50), 1)
+    #     # 2. Rysowanie trajektorii zoptymalizowanej (CZERWONA)
+    #     for i in range(len(opt_path) - 1):
+    #         pt1 = to_img(opt_path[i][0], opt_path[i][1])
+    #         pt2 = to_img(opt_path[i + 1][0], opt_path[i + 1][1])
+    #         cv2.line(img, pt1, pt2, (0, 0, 255), 2)
+    #         cv2.circle(img, pt1, 3, (0, 0, 255), -1)
 
-        # Zapis do pliku zamiast wyświetlania w oknie GUI
-        self.frame_counter = getattr(self, 'frame_counter', 0) + 1
+    #     # 3. Rysowanie samego drona (NIEBIESKIE KÓŁKO W ŚRODKU)
+    #     drone_pt = to_img(self.actual_state[0], self.actual_state[1])
+    #     cv2.circle(img, drone_pt, 8, (255, 0, 0), -1)
 
-        # Pętla działa na 100Hz, więc 100 klatek = 1 sekunda
-        if self.frame_counter % 100 == 0:
-            # Pamiętaj o absolutnej ścieżce, żeby łatwo znaleźć plik!
-            save_path = f'/home/developer/ros2_ws/src/mpc_controller/tmp_debug_img/mpc_radar_{self.frame_counter}.jpg'
-            cv2.imwrite(save_path, img)
+    #     # Dodanie siatki odniesienia (krzyż)
+    #     cv2.line(img, (cx, 0), (cx, 500), (50, 50, 50), 1)
+    #     cv2.line(img, (0, cy), (500, cy), (50, 50, 50), 1)
+
+    #     # Zapis do pliku zamiast wyświetlania w oknie GUI
+    #     self.frame_counter = getattr(self, 'frame_counter', 0) + 1
+
+    #     # Pętla działa na 100Hz, więc 100 klatek = 1 sekunda
+    #     if self.frame_counter % 100 == 0:
+    #         # Pamiętaj o absolutnej ścieżce, żeby łatwo znaleźć plik!
+    #         save_path = f'/home/developer/ros2_ws/src/mpc_controller/tmp_debug_img/mpc_radar_{self.frame_counter}.jpg'
+    #         cv2.imwrite(save_path, img)
 
 
 def main(args=None):

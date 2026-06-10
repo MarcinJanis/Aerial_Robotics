@@ -495,8 +495,8 @@ void UAV_model_acados_setup_nlp_in(UAV_model_solver_capsule* capsule, const int 
 
    double* W_0 = calloc(NY0*NY0, sizeof(double));
     // change only the non-zero elements:
-    W_0[0+(NY0) * 0] = 100;
-    W_0[1+(NY0) * 1] = 100;
+    W_0[0+(NY0) * 0] = 50;
+    W_0[1+(NY0) * 1] = 50;
     W_0[2+(NY0) * 2] = 150;
     W_0[3+(NY0) * 3] = 50;
     W_0[4+(NY0) * 4] = 50;
@@ -505,8 +505,8 @@ void UAV_model_acados_setup_nlp_in(UAV_model_solver_capsule* capsule, const int 
     W_0[7+(NY0) * 7] = 30;
     W_0[8+(NY0) * 8] = 30;
     W_0[9+(NY0) * 9] = 40;
-    W_0[10+(NY0) * 10] = 10;
-    W_0[11+(NY0) * 11] = 10;
+    W_0[10+(NY0) * 10] = 50;
+    W_0[11+(NY0) * 11] = 50;
     W_0[12+(NY0) * 12] = 10;
     W_0[13+(NY0) * 13] = 50;
     W_0[14+(NY0) * 14] = 50000;
@@ -524,8 +524,8 @@ void UAV_model_acados_setup_nlp_in(UAV_model_solver_capsule* capsule, const int 
     free(yref);
     double* W = calloc(NY*NY, sizeof(double));
     // change only the non-zero elements:
-    W[0+(NY) * 0] = 100;
-    W[1+(NY) * 1] = 100;
+    W[0+(NY) * 0] = 50;
+    W[1+(NY) * 1] = 50;
     W[2+(NY) * 2] = 150;
     W[3+(NY) * 3] = 50;
     W[4+(NY) * 4] = 50;
@@ -534,8 +534,8 @@ void UAV_model_acados_setup_nlp_in(UAV_model_solver_capsule* capsule, const int 
     W[7+(NY) * 7] = 30;
     W[8+(NY) * 8] = 30;
     W[9+(NY) * 9] = 40;
-    W[10+(NY) * 10] = 10;
-    W[11+(NY) * 11] = 10;
+    W[10+(NY) * 10] = 50;
+    W[11+(NY) * 11] = 50;
     W[12+(NY) * 12] = 10;
     W[13+(NY) * 13] = 50;
     W[14+(NY) * 14] = 50000;
@@ -554,8 +554,8 @@ void UAV_model_acados_setup_nlp_in(UAV_model_solver_capsule* capsule, const int 
 
     double* W_e = calloc(NYN*NYN, sizeof(double));
     // change only the non-zero elements:
-    W_e[0+(NYN) * 0] = 100;
-    W_e[1+(NYN) * 1] = 100;
+    W_e[0+(NYN) * 0] = 50;
+    W_e[1+(NYN) * 1] = 50;
     W_e[2+(NYN) * 2] = 150;
     W_e[3+(NYN) * 3] = 50;
     W_e[4+(NYN) * 4] = 50;
@@ -564,8 +564,8 @@ void UAV_model_acados_setup_nlp_in(UAV_model_solver_capsule* capsule, const int 
     W_e[7+(NYN) * 7] = 30;
     W_e[8+(NYN) * 8] = 30;
     W_e[9+(NYN) * 9] = 40;
-    W_e[10+(NYN) * 10] = 10;
-    W_e[11+(NYN) * 11] = 10;
+    W_e[10+(NYN) * 10] = 50;
+    W_e[11+(NYN) * 11] = 50;
     W_e[12+(NYN) * 12] = 10;
     ocp_nlp_cost_model_set(nlp_config, nlp_dims, nlp_in, N, "W", W_e);
     free(W_e);
@@ -651,7 +651,7 @@ void UAV_model_acados_setup_nlp_in(UAV_model_solver_capsule* capsule, const int 
     double* lubu = calloc(2*NBU, sizeof(double));
     double* lbu = lubu;
     double* ubu = lubu + NBU;
-    lbu[0] = 0.05;
+    lbu[0] = 0.15;
     ubu[0] = 0.55;
     lbu[1] = -0.005;
     ubu[1] = 0.005;
@@ -678,18 +678,24 @@ void UAV_model_acados_setup_nlp_in(UAV_model_solver_capsule* capsule, const int 
 
     // x
     int* idxbx = malloc(NBX * sizeof(int));
-    idxbx[0] = 10;
-    idxbx[1] = 11;
-    idxbx[2] = 12;
+    idxbx[0] = 3;
+    idxbx[1] = 4;
+    idxbx[2] = 10;
+    idxbx[3] = 11;
+    idxbx[4] = 12;
     double* lubx = calloc(2*NBX, sizeof(double));
     double* lbx = lubx;
     double* ubx = lubx + NBX;
-    lbx[0] = -10;
-    ubx[0] = 10;
-    lbx[1] = -10;
-    ubx[1] = 10;
-    lbx[2] = -5;
-    ubx[2] = 5;
+    lbx[0] = -1;
+    ubx[0] = 1;
+    lbx[1] = -1;
+    ubx[1] = 1;
+    lbx[2] = -10;
+    ubx[2] = 10;
+    lbx[3] = -10;
+    ubx[3] = 10;
+    lbx[4] = -5;
+    ubx[4] = 5;
 
     for (int i = 1; i < N; i++)
     {
